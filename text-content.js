@@ -37,6 +37,7 @@
       const text=current.projects[key];if(!text)continue;
       for(const field of ['title','label','description','client','role','format'])p[field]=text[field];
       p.groups=clone(text.groups);p.subheadings=clone(text.subheadings);p.groupDescriptions=clone(text.groupDescriptions||{});
+      p.related?.forEach((link,i)=>link[1]=text.relatedLabels?.[i]??link[1]);
       p.media.forEach((media,i)=>media[1]=text.captions[i]);
       p.proof.links.forEach((link,i)=>link[0]=text.releaseContexts[i]);
       const card=root.querySelector('[data-project="'+key+'"]');

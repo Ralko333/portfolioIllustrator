@@ -175,8 +175,14 @@
       playTimeline(renderElapsed);
     }
     function openProject(key,trigger){
-      const p=projects[key];if(!p)return;closeImage();previous=trigger||root.querySelector('[data-project="'+key+'"]');document.title=p.title+' — '+(text()?.home.brandName||'Сергей Белик')+(p.personal||p.mixed?'':' / J’PAN');
+      const p=projects[key];if(!p)return;closeImage();previous=trigger||root.querySelector('[data-project="'+key+'"]');document.title=p.title+' — '+(text()?.home.brandName||'Сергей Белик')+(p.brand?' / '+p.brand:p.personal||p.mixed?'':' / J’PAN');
       ['label','title','description'].forEach(field=>root.querySelector('[data-case-'+field+']').textContent=p[field]);
+      const related=root.querySelector('.sp-case-related');related.replaceChildren();
+      for(const [project,label] of p.related||[]){
+        const link=document.createElement('a');link.href='#project-'+project;link.textContent=label;
+        link.addEventListener('click',event=>{event.preventDefault();navigateWithLogo('#project-'+project,'Открываем проект',null)});related.append(link);
+      }
+      related.hidden=!related.childElementCount;
       gallery.replaceChildren();gallery.classList.toggle('sp-case-wide',!!p.wide);gallery.classList.toggle('sp-case-illustration',!!p.personal);
       function publicationLink(label,url){const a=document.createElement('a');a.textContent=ui('release')+' ↗';a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.className='sp-release-link cursor-interaction';a.title=label;a.setAttribute('aria-label',ui('release')+': '+label);return a}
       publications.replaceChildren();
@@ -184,9 +190,9 @@
       const usedLinks=new Set();
       p.media.forEach(([asset,alt,linkIndex,published,wide],index)=>{
         if(p.groups?.[index]){
-          const heading=document.createElement('h3'),link=document.createElement('button');heading.className='sp-gallery-heading';heading.id='case-'+key+'-'+index;heading.textContent=p.groups[index];gallery.append(heading);
+          const anchor=p.groupAnchors?.[index]??String(index),heading=document.createElement('h3'),link=document.createElement('button');heading.className='sp-gallery-heading';heading.id='case-'+key+'-'+anchor;heading.textContent=p.groups[index];gallery.append(heading);
           if(p.groupDescriptions?.[index]){const description=document.createElement('p');description.className='sp-gallery-description';description.textContent=p.groupDescriptions[index];gallery.append(description)}
-          link.type='button';link.textContent=p.groups[index];link.addEventListener('click',()=>{history.pushState(null,'','#project-'+key+'/'+(key==='menus'&&index===10?'halloween':index));scrollToGroup(heading,reduceMotion.matches?'instant':'smooth')});sectionNav.append(link);
+          link.type='button';link.textContent=p.groups[index];link.addEventListener('click',()=>{history.pushState(null,'','#project-'+key+'/'+(key==='menus'&&anchor==='10'?'halloween':anchor));scrollToGroup(heading,reduceMotion.matches?'instant':'smooth')});sectionNav.append(link);
         }
         if(p.subheadings?.[index]){const heading=document.createElement('h4');heading.className='sp-gallery-subheading';heading.textContent=p.subheadings[index];gallery.append(heading)}
         const figure=document.createElement('figure'),visual=document.createElement('button'),img=document.createElement('img'),caption=document.createElement('figcaption'),label=document.createElement('span');
@@ -213,10 +219,12 @@
     function route(){
       cancelPending();
       let [key,section]=location.hash.startsWith('#project-')?location.hash.slice(9).split('/'):[];
+      if(['menu-layout','vlavashe','spaffy'].includes(key)){section=key;key='design';history.replaceState(null,'','#project-design/'+section)}
+      if(location.hash==='#sp-design'){key='design';history.replaceState(null,'','#project-design')}
       if(key==='imagination-flood'){key='selected';section='0';history.replaceState(null,'','#project-selected/0')}
       if(key&&Object.hasOwn(projects,key)){openProject(key);if(section){const index=key==='menus'&&section==='halloween'?'10':section,heading=root.querySelector('#case-'+key+'-'+CSS.escape(index));if(heading)scrollToGroup(heading,'instant')}return}
       const wasDetail=!detail.hidden;showHome();
-      const target=location.hash==='#sp-work'?root.querySelector('#sp-work'):location.hash==='#sp-about'?root.querySelector('#sp-about'):root;
+      const target=['#sp-work','#sp-about'].includes(location.hash)?root.querySelector(location.hash):root;
       target.scrollIntoView({block:'start',behavior:'auto'});
       if(wasDetail&&previous){previous.focus({preventScroll:true});previous.scrollIntoView({block:'center',behavior:'auto'})}
     }

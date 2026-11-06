@@ -71,25 +71,24 @@ window.PORTFOLIO_DATA = {
     "restored67": "assets/proofs/sailor-live-1.svg",
     "restored68": "assets/proofs/sailor-live-2.svg",
     "restored69": "assets/proofs/sailor-live-3.svg",
-    "restored70": "assets/proofs/sailor-live-4.svg"
+    "restored70": "assets/proofs/sailor-live-4.svg",
+    "vlavasheFront": "assets/vlavashe-a6-front.webp",
+    "vlavasheBack": "assets/vlavashe-a6-back.webp",
+    "spaffyPost": "assets/spaffy-instagram.webp"
   },
   "projects": {
     "menus": {
       "title": "Сезонные меню",
-      "label": "J’PAN / Обложки и вёрстка меню",
-      "description": "Обложки для сезонных и праздничных меню J’PAN. В основе иллюстраций — истории с маскотом ресторана, сиба-ину. Для зимнего меню 2025 года также выполнил вёрстку внутренних страниц.",
+      "label": "J’PAN / Иллюстрации для меню",
+      "description": "Обложки для сезонных и праздничных меню J’PAN. В основе иллюстраций — истории с маскотом ресторана, сиба-ину.",
       "client": "J’PAN",
-      "role": "Иллюстрации обложек; вёрстка зимнего меню 2025",
+      "role": "Иллюстрации обложек",
       "format": "Печатное меню",
       "proof": {
         "links": [
           [
             "Winter 2025",
             "https://t.me/jpan_bistro/4542"
-          ],
-          [
-            "Меню",
-            "https://t.me/jpan_bistro/5231"
           ],
           [
             "Ханами",
@@ -131,18 +130,6 @@ window.PORTFOLIO_DATA = {
           false
         ],
         [
-          "restored43",
-          "Вёрстка зимнего меню · страница 1",
-          1,
-          false
-        ],
-        [
-          "restored44",
-          "Вёрстка зимнего меню · страница 2",
-          1,
-          false
-        ],
-        [
           "winterProof",
           "Зима 2025 · публикация J’PAN",
           0,
@@ -163,7 +150,7 @@ window.PORTFOLIO_DATA = {
         [
           "springProof",
           "Ханами · Весна · публикация J’PAN",
-          2,
+          1,
           true
         ],
         [
@@ -187,7 +174,7 @@ window.PORTFOLIO_DATA = {
         [
           "restored48",
           "Хэллоуин · публикация J’PAN",
-          3,
+          2,
           true
         ],
         [
@@ -217,7 +204,7 @@ window.PORTFOLIO_DATA = {
         [
           "restored53",
           "Весна · TOP OF THE TOP",
-          4,
+          3,
           true
         ],
         [
@@ -247,27 +234,42 @@ window.PORTFOLIO_DATA = {
         [
           "restored58",
           "Первое меню J’PAN · публикация J’PAN",
-          6,
+          5,
           true
         ]
       ],
       "groups": {
         "0": "Зима 2025",
-        "5": "Ханами · Весна",
-        "8": "Лето",
-        "10": "Хэллоуин",
-        "12": "Спешл зима 2024",
-        "14": "Весна",
-        "17": "Зима 2023",
-        "19": "Первое меню J’PAN"
+        "3": "Ханами · Весна",
+        "6": "Лето",
+        "8": "Хэллоуин",
+        "10": "Спешл зима 2024",
+        "12": "Весна",
+        "15": "Зима 2023",
+        "17": "Первое меню J’PAN"
       },
       "subheadings": {
-        "2": "Вёрстка меню",
-        "4": "Меню в публикации J’PAN"
+        "2": "Меню в публикации J’PAN"
       },
       "groupDescriptions": {
-        "19": "Для первого осеннего меню предложил связать лицевую и оборотную стороны одним сюжетом. Сначала сиба-ину наслаждается пикником в кленовом лесу, затем наблюдает за закатом. Осенние клёны отсылают к момидзи.\n\nПредложенный мной формат истории на двух сторонах обложки ресторан сохранил и в последующих меню."
-      }
+        "17": "Для первого осеннего меню предложил связать лицевую и оборотную стороны одним сюжетом. Сначала сиба-ину наслаждается пикником в кленовом лесу, затем наблюдает за закатом. Осенние клёны отсылают к момидзи.\n\nПредложенный мной формат истории на двух сторонах обложки ресторан сохранил и в последующих меню."
+      },
+      "groupAnchors": {
+        "0": "0",
+        "3": "5",
+        "6": "8",
+        "8": "10",
+        "10": "12",
+        "12": "14",
+        "15": "17",
+        "17": "19"
+      },
+      "related": [
+        [
+          "design/menu-layout",
+          "Вёрстка зимнего меню 2025 ↗"
+        ]
+      ]
     },
     "bank": {
       "title": "J’PAN × СберПрайм",
@@ -697,6 +699,77 @@ window.PORTFOLIO_DATA = {
       ],
       "groups": {},
       "subheadings": {}
+    },
+    "design": {
+      "title": "Графический дизайн",
+      "label": "Вёрстка и типографика",
+      "description": "Вёрстка зимнего меню J’PAN, буклет А6 для промоутеров «Влаваше» и макет для карусели Instagram Spaffy.",
+      "client": "J’PAN, Влаваше, Spaffy",
+      "role": "Вёрстка и типографика",
+      "format": "Печатные и цифровые макеты",
+      "mixed": true,
+      "proof": {
+        "links": [
+          [
+            "Меню",
+            "https://t.me/jpan_bistro/5231"
+          ]
+        ]
+      },
+      "media": [
+        [
+          "restored43",
+          "Вёрстка зимнего меню · страница 1",
+          0,
+          false
+        ],
+        [
+          "restored44",
+          "Вёрстка зимнего меню · страница 2",
+          0,
+          false
+        ],
+        [
+          "vlavasheFront",
+          "Буклет А6 · лицевая сторона",
+          null,
+          false
+        ],
+        [
+          "vlavasheBack",
+          "Буклет А6 · оборот",
+          null,
+          false
+        ],
+        [
+          "spaffyPost",
+          "Слайд для карусели · 1080 × 1350 px",
+          null,
+          false
+        ]
+      ],
+      "groups": {
+        "0": "Зимнее меню J’PAN",
+        "2": "Влаваше",
+        "4": "Spaffy"
+      },
+      "groupAnchors": {
+        "0": "menu-layout",
+        "2": "vlavashe",
+        "4": "spaffy"
+      },
+      "groupDescriptions": {
+        "0": "Вёрстка внутренних страниц зимнего меню J’PAN 2025 года: разделы с блюдами и напитками.",
+        "2": "Двусторонний буклет А6 для промоутеров «Влаваше». На лицевой стороне — предложение комбо, на обороте — акция с пятой шавермой в подарок.",
+        "4": "Макет для карусели Instagram о завершении темы «Проценты». Формат — 1080 × 1350 px."
+      },
+      "subheadings": {},
+      "related": [
+        [
+          "menus",
+          "Иллюстрации для обложек меню ↗"
+        ]
+      ]
     }
   },
   "previews": {
@@ -771,7 +844,10 @@ window.PORTFOLIO_DATA = {
     "worldOne": "assets/previews/world-cuisines-1.webp",
     "worldTwo": "assets/previews/world-cuisines-2.webp",
     "worldThree": "assets/previews/world-cuisines-3.webp",
-    "worldFour": "assets/previews/world-cuisines-4.webp"
+    "worldFour": "assets/previews/world-cuisines-4.webp",
+    "vlavasheFront": "assets/previews/vlavashe-a6-front.webp",
+    "vlavasheBack": "assets/previews/vlavashe-a6-back.webp",
+    "spaffyPost": "assets/spaffy-instagram.webp"
   },
   "dimensions": {
     "imaginationFlood": [
@@ -1061,6 +1137,18 @@ window.PORTFOLIO_DATA = {
     "worldFour": [
       1800,
       2400
+    ],
+    "vlavasheFront": [
+      1241,
+      1749
+    ],
+    "vlavasheBack": [
+      1241,
+      1749
+    ],
+    "spaffyPost": [
+      1080,
+      1350
     ]
   }
 };
