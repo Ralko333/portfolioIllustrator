@@ -216,11 +216,19 @@ function renderCase(key) {
     publications.append(list);
     detail.append(publications);
   }
-  const nextKey = order[(order.indexOf(key) + 1) % order.length];
-  const next = element('nav', 'next-project');
-  next.setAttribute('aria-label', 'Следующий проект');
-  next.append(element('span', '', 'Следующий проект'), link(`${projects[nextKey].title} ↗`, `#project-${nextKey}`));
-  detail.append(next);
+  const projectIndex = order.indexOf(key);
+  const pagination = element('nav', 'project-pagination');
+  pagination.setAttribute('aria-label', 'Навигация по проектам');
+  for (const [direction, step, label] of [['previous', -1, 'Предыдущий проект'], ['next', 1, 'Следующий проект']]) {
+    const targetKey = order[(projectIndex + step + order.length) % order.length];
+    const target = link('', `#project-${targetKey}`, 'project-pagination-link');
+    target.dataset.direction = direction;
+    target.setAttribute('aria-label', `${label}: ${projects[targetKey].title}`);
+    const title = step < 0 ? `← ${projects[targetKey].title}` : `${projects[targetKey].title} →`;
+    target.append(element('span', 'pagination-label', label), element('span', 'pagination-title', title));
+    pagination.append(target);
+  }
+  detail.append(pagination);
 }
 
 function readRoute(hash) {
