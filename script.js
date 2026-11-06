@@ -2,6 +2,7 @@
     await window.PORTFOLIO_TEXT.load();
     const root=document.getElementById('sergey-portfolio-concept');
     const {assets,projects,previews,dimensions}=window.PORTFOLIO_DATA;
+    const bankCardAssets=new Set(projects.bank.media.filter(([, , ,published])=>!published).map(([asset])=>asset));
     const home=root.querySelector('.sp-home'),detail=root.querySelector('.sp-case'),gallery=root.querySelector('.sp-case-gallery'),publications=root.querySelector('.sp-case-publications');
     let previous=null,pending=null,transitionRun=0,flyerAnimation=null,flyingCorner=null,openingCard=null,transitionOverflow=null,transitionGutter=null,returnSnapshot=null,openingOrigin=null;
     let homeTitle=document.title;
@@ -15,7 +16,7 @@
     let imageList=[],imageIndex=0,savedOverflow='';
     function setZoom(zoomed){viewer.classList.toggle('sp-lightbox-zoomed',zoomed);if(zoomed)viewerImage.style.setProperty('--image-width',Math.max(viewerImage.naturalWidth,viewerStage.clientWidth*2)+'px');zoomButton.textContent=zoomed?ui('fit'):ui('zoom');zoomButton.setAttribute('aria-pressed',String(zoomed));viewerStage.scrollTo(0,0)}
     function displayImage(){
-      const [asset,alt]=imageList[imageIndex];setZoom(false);viewerImage.src=assets[asset];viewerImage.alt=alt;
+      const [asset,alt]=imageList[imageIndex];setZoom(false);viewerImage.src=assets[asset];viewerImage.alt=alt;viewerImage.classList.toggle('sp-bank-card',bankCardAssets.has(asset));
       viewerImage.style.setProperty('--image-width',dimensions[asset][0]+'px');
       viewer.querySelector('[data-image-original]').href=assets[asset];
       viewer.querySelector('#sp-lightbox-caption').textContent=alt+(imageList.length>1?' · '+(imageIndex+1)+' / '+imageList.length:'');
@@ -198,7 +199,7 @@
         const figure=document.createElement('figure'),visual=document.createElement('button'),img=document.createElement('img'),caption=document.createElement('figcaption'),label=document.createElement('span');
         figure.classList.toggle('sp-media-published',!!published);figure.classList.toggle('sp-media-featured',asset==='imaginationFlood');if(wide)figure.style.gridColumn='1 / -1';
         visual.type='button';visual.className='sp-media-art';visual.setAttribute('aria-label','Увеличить: '+alt);visual.addEventListener('click',()=>openImage(p.media,index));
-        img.src=previews[asset];img.alt=alt;img.dataset.asset=asset;img.loading='lazy';img.decoding='async';[img.width,img.height]=dimensions[asset];label.textContent=alt;visual.append(img);caption.append(label);
+        img.src=previews[asset];img.alt=alt;img.dataset.asset=asset;img.classList.toggle('sp-bank-card',bankCardAssets.has(asset));img.loading='lazy';img.decoding='async';[img.width,img.height]=dimensions[asset];label.textContent=alt;visual.append(img);caption.append(label);
         if(Number.isInteger(linkIndex)){const [linkLabel,url]=p.proof.links[linkIndex];if(!usedLinks.has(url)){caption.append(publicationLink(linkLabel,url));usedLinks.add(url)}}
         figure.append(visual,caption);gallery.append(figure);
       });

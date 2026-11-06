@@ -251,3 +251,11 @@ body { margin: 0; background: #eaf2fb; }
 #sergey-portfolio-concept .sp-case-related{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 26px}
 #sergey-portfolio-concept .sp-case-related a{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;border:1px solid var(--rule);border-radius:24px;font-size:13px;text-decoration:none}
 #sergey-portfolio-concept .sp-case-related a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Clip the white print corners to the card's actual outline at every size. */
+#sergey-portfolio-concept img.sp-bank-card{clip-path:inset(.15% round 3.6% / 5.7%)}
+#sergey-portfolio-concept .sp-case-gallery img.sp-bank-card{height:auto}
+
+@media(min-width:681px){
+ #sergey-portfolio-concept .sp-grid>[data-project="selected"]{grid-column:1 / -1;width:calc((100% - 24px) / 2);justify-self:center}
+}
