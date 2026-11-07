@@ -10,4 +10,6 @@ At widths up to 700px, the same accordion runs vertically. Compact folders overl
 
 Images retain their original colors. The original logo and all nine sections are preserved; bank artwork corners remain clipped in previews, cases, and the image viewer. `folders.css` provides the new shelf and dark theme above the reusable case styles. The public interface does not link to the original version.
 
+Folder artwork surfaces and case image cards use textured navy paper with an oversized relief of the original S logo. `folder-paper.svg` supplies the decorative logo background; it does not alter the artwork files or the original site.
+
 Animations use CSS and the native View Transition API when available, with a fade fallback. System reduced-motion preferences disable animated transitions. The original site and this version can be compared by URL; neither redirects to the other.

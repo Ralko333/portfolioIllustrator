@@ -1,4 +1,5 @@
 :root{--paper:#101c25;--ink:#f4f1e9;--muted:#abb8c3;--rule:#354550;--blue:#6082a8;--orange:#e38b70;--inset:clamp(24px,3vw,52px);--gutter:28px;--folder-tab:38px;--folder-caption:clamp(78px,10svh,104px);color-scheme:dark;background:var(--paper)}
+:root{--folder-surface:url('folder-paper.svg') left -35px center/auto 132% no-repeat,radial-gradient(ellipse at 0 0,#355b7844,transparent 75%),repeating-linear-gradient(0deg,#ffffff03 0 1px,transparent 1px 3px),#122e42}
 body{background:radial-gradient(ellipse at 40% -12%,#1d303e 0,transparent 60%),#101c25;color:var(--ink);overflow-x:clip}
 .wrap{width:min(100% - var(--inset)*2,1920px)}
 ::selection{background:#6082a8;color:#fff}
@@ -26,7 +27,7 @@ body{background:radial-gradient(ellipse at 40% -12%,#1d303e 0,transparent 60%),#
 .folder-trigger::after{content:"";position:absolute;inset:0 auto 0 0;width:9px;pointer-events:none;z-index:3;background:linear-gradient(90deg,#ffffff0b,transparent)}
 .folder-number{position:absolute;top:0;left:0;right:0;height:var(--folder-tab);padding:7px 15px;font-size:clamp(16px,1.4vw,25px);font-weight:700;font-synthesis:weight;line-height:24px;background:linear-gradient(110deg,#243b49,#152633);border-bottom:1px solid #344b5c;z-index:2}
 .is-active .folder-number{background:linear-gradient(127deg,#d57257,#cb674f 88px,#263d4b 89px);color:#fff}
-.folder .project-art{position:absolute;inset:var(--folder-tab) 0 var(--folder-caption);display:flex;gap:0;padding:0;margin:0;width:100%;height:auto;aspect-ratio:auto;border-radius:0;background:#e7e1d5;overflow:hidden;isolation:isolate;transition:none}
+.folder .project-art{position:absolute;inset:var(--folder-tab) 0 var(--folder-caption);display:flex;gap:0;padding:0;margin:0;width:100%;height:auto;aspect-ratio:auto;border-radius:0;background:var(--folder-surface);overflow:hidden;isolation:isolate;transition:none}
 .folder .project-art::before,.folder .project-art::after{display:none}
 .folder .project-art img{display:none;position:static;inset:auto;min-width:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;filter:none;box-shadow:none;transform:none!important;aspect-ratio:auto;transition:none}
 .folder .project-art img:first-child{display:block}
@@ -37,12 +38,7 @@ body{background:radial-gradient(ellipse at 40% -12%,#1d303e 0,transparent 60%),#
 .folder:not(.is-active) .art-panel{grid-template-rows:3fr 2fr}
 .folder:not(.is-active) .art-panel img:first-child{object-position:27% center}
 .folder:not(.is-active) .art-panel img:last-child{object-position:82% bottom}
-.folder .art-stickers{background:#f8f5ed}
-.folder .art-series{background:#ded1bd}
-.folder .art-merch{background:#f4b7df}
-.folder .art-sailor{background:#ec9992}
-.folder .art-menus{background:#becfd1}
-.folder .art-bank{background:#453751}
+.folder .art-bank{background-position:right -25px center,0 0,0 0}
 .bank-card{--bank-card-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3600' height='2270' viewBox='0 0 3600 2270'%3E%3Crect x='6' y='6' width='3588' height='2258' rx='142' fill='white'/%3E%3C/svg%3E");clip-path:none;-webkit-mask-image:var(--bank-card-mask);mask-image:var(--bank-card-mask);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-position:center;mask-position:center}
 .folder:not(.is-active) .art-bank .bank-card{-webkit-mask-size:cover;mask-size:cover;-webkit-mask-position:57% center;mask-position:57% center}
 .folder:not(.is-active) .art-bank img:first-child{object-position:57% center}
@@ -74,8 +70,8 @@ body{background:radial-gradient(ellipse at 40% -12%,#1d303e 0,transparent 60%),#
 .case-description,.group-description{color:#d0d8df}
 .case-meta dd{color:#ecede9}
 .case-section,.case-nav,.project-pagination,.publications{border-color:var(--rule)}
-.image-button,.image-button.proof-image,.image-button.wide-image{background:#e4e5e1;color:#162c3b;border-radius:3px;padding:24px}
-.image-button.bank-image{background:#ded7e4}
+.image-button,.image-button.proof-image,.image-button.wide-image{background:var(--folder-surface);color:var(--ink);border-radius:3px;padding:24px}
+.image-button.bank-image{background:var(--folder-surface);background-position:right -25px center,0 0,0 0}
 .image-button::after{background:#172b3ded;color:#f4f1e9;border-radius:2px}
 .case-figure figcaption{color:#acbecd}
 .release-link{color:#e8c5b1}
