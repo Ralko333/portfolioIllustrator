@@ -95,7 +95,6 @@ body{background:radial-gradient(ellipse at 40% -12%,#1d303e 0,transparent 60%),#
   :root{--inset:18px;--gutter:18px;--stack-overlap:18px;--folder-tab:27px;--folder-caption:39px}
   .site-header{min-height:66px;gap:16px}.brand{font-size:17px;gap:11px}.brand-mark{width:29px;height:42px}.desktop-nav{display:flex;gap:20px;font-size:11px}.desktop-nav a:first-child{text-decoration-thickness:2px;text-underline-offset:8px}.mobile-nav{display:none}
   .exhibition-heading.hero{display:block;padding-block:13px 17px}.exhibition-heading.hero h1{white-space:normal;font-size:clamp(27px,7.5vw,42px);max-width:560px;letter-spacing:-.035em;line-height:1.12}.exhibition-heading h2{display:none}
-  #folder-instruction{position:static;clip-path:none;overflow:visible;white-space:normal;width:auto;height:auto;margin:0 18px 13px;font-size:10px;line-height:1.5;color:#c8d3dc}
   .folder-shelf{flex-direction:column;gap:0;width:calc(100% - 22px);height:auto;margin-left:10px;margin-right:12px;padding:2px 0 7px}
   .folder.project{flex:0 0 auto;width:100%;height:calc(clamp(112px,15.2svh,145px) + var(--under-next));margin:0;z-index:var(--stack-order,1);transform:none;transition:height .48s cubic-bezier(.22,.75,.18,1),box-shadow .48s;scroll-margin-top:15px;border-color:#3c5263;box-shadow:0 -5px 12px #02060990,0 -1px 0 #61748440}
   .folder+.folder{margin-left:0;margin-top:calc(-1 * var(--stack-overlap))}
@@ -120,7 +119,7 @@ body{background:radial-gradient(ellipse at 40% -12%,#1d303e 0,transparent 60%),#
   .folder-title{font-size:14px;line-height:1.2;overflow-wrap:normal}
   .is-active .folder-meta{height:calc(91px + var(--under-next));padding:12px 15px calc(12px + var(--under-next))}
   .is-active .folder-title{font-size:23px;line-height:1.15}
-  .is-active .folder-hint{display:block;font-size:11px;line-height:1.4;color:#f0b69f;margin-top:8px}
+  .is-active .folder-hint{display:inline-flex;align-self:flex-start;align-items:center;justify-content:center;padding:5px 10px;border:1px solid #d4886e80;border-radius:4px;background:#2e414e;color:#f7dfd2;font-size:11px;font-weight:500;line-height:1.25;margin-top:8px;white-space:nowrap}
   .shelf-bottom{font-size:13px;gap:17px;padding-block:20px 13px}.shelf-counter{font-size:14px;min-width:67px}
   .about{grid-template-columns:1fr;margin-top:30px;padding-block:36px 50px;gap:23px}.about .eyebrow{font-size:10px}.about h2{font-size:32px;margin-top:15px}.about-copy{font-size:12px;line-height:1.8}.about-lead{font-size:16px}
   .site-footer{font-size:11px}.footer-links{margin-top:19px}

@@ -131,16 +131,12 @@ function selectFolder(key, announce = true) {
     if (needsSecondTap()) trigger.setAttribute('aria-expanded', String(selected));
     else trigger.removeAttribute('aria-expanded');
     trigger.setAttribute('aria-label', `${!needsSecondTap() || selected ? 'Открыть проект' : 'Выдвинуть папку'}: ${title}`);
-    card.querySelector('.folder-hint').textContent = selected
-      ? (needsSecondTap() ? 'Нажмите ещё раз, чтобы открыть проект' : 'Открыть проект ↗')
-      : 'Нажмите, чтобы выдвинуть папку';
+    card.querySelector('.folder-hint').textContent = selected ? 'Открыть проект ↗' : '';
     if (selected) card.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
   }
   document.querySelector('#folder-current').textContent = key ? String(order.indexOf(key) + 1).padStart(2, '0') : '—';
-  document.querySelector('#folder-instruction').textContent = needsSecondTap()
-    ? 'Первый тап — выдвинуть папку. Второй — открыть проект.'
-    : 'Нажмите на превью, чтобы открыть проект.';
-  if (announce && key) document.querySelector('#announcement').textContent = `Папка «${projects[key].title}» выдвинута. ${needsSecondTap() ? 'Нажмите ещё раз, чтобы открыть проект.' : ''}`;
+  document.querySelector('#folder-instruction').textContent = 'Выберите проект';
+  if (announce && key) document.querySelector('#announcement').textContent = `Выбран проект «${projects[key].title}».`;
 }
 
 function openFolder(key) {
