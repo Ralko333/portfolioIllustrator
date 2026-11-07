@@ -2,7 +2,7 @@ const rootURL = new URL('../', document.baseURI);
 const { assets, previews, dimensions, projects } = window.PORTFOLIO_DATA;
 const order = ['menus', 'bank', 'design', 'panel', 'merch', 'stickers', 'series', 'sailor', 'selected'];
 const compositions = {
-  menus: ['winterFront', 'springFront', 'restored45'], bank: ['bankNight', 'bankSpring'],
+  menus: ['winterFront', 'springFront'], bank: ['bankNight', 'bankSpring'],
   design: ['restored43', 'vlavasheFront', 'spaffyPost'], panel: ['panel'],
   merch: ['merchOne', 'merchTwo'], stickers: ['stickerOne', 'stickerTwo', 'stickerThree'],
   series: ['worldOne', 'worldTwo', 'worldThree'], sailor: ['restored63', 'restored64'], selected: ['imaginationFlood']
@@ -12,10 +12,15 @@ const detail = document.querySelector('#case-view');
 const grid = document.querySelector('#project-grid');
 const dialog = document.querySelector('#lightbox');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const verticalShelf = matchMedia('(max-width: 1000px)');
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+const needsSecondTap = () => verticalShelf.matches || !finePointer.matches;
 const bankAssets = new Set(projects.bank.media.slice(0, 5).map(([key]) => key));
 let copy = { home: {}, ui: {} }, current = { key: null, anchor: '' }, currentHash = null;
 let homeScroll = 0, lastProject = 'menus', routeToken = 0, activeTransition = null;
 let lightboxIndex = 0, lightboxKey = null, zoomed = false;
+let pulledProject = needsSecondTap() ? null : 'menus';
+let keyboardInput = false;
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
 function element(tag, className, text) {
@@ -82,32 +87,110 @@ async function loadCopy() {
 }
 
 function renderHome() {
-  for (const key of order) {
+  for (const [index, key] of order.entries()) {
     const p = projects[key];
-    const card = link('', `#project-${key}`, 'project reveal');
+    const card = element('article', 'project folder');
     card.dataset.project = key;
-    card.setAttribute('aria-label', `${copy.ui?.openProject || 'Открыть проект'}: ${p.title}`);
-    if (key === 'menus') card.classList.add('project-featured');
-    if (key === 'panel') card.classList.add('project-panorama');
-    if (key === 'selected') card.classList.add('project-centered');
-    const art = element('span', `project-art art-${key}`);
+    const trigger = element('button', 'folder-trigger');
+    trigger.type = 'button';
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', `folder-art-${key}`);
+    trigger.setAttribute('aria-describedby', `folder-hint-${key}`);
+    const number = element('span', 'folder-number', String(index + 1).padStart(2, '0'));
+    number.setAttribute('aria-hidden', 'true');
+    const art = element('span', `project-art folder-art art-${key}`);
+    art.id = `folder-art-${key}`;
+    art.setAttribute('aria-hidden', 'true');
     compositions[key].forEach((asset, i) => {
-      const caption = p.media.find(([a]) => a === asset)?.[1] || p.title;
-      const img = image(asset, caption, key === 'menus');
+      const img = image(asset, '', key === 'menus' || !verticalShelf.matches);
       if (key === 'menus' && i === 0) img.fetchPriority = 'high';
       art.append(img);
     });
-    const meta = element('span', 'project-meta');
-    const title = element('span');
-    title.append(element('span', 'project-title', p.title), element('span', 'project-label', p.cardLabel || p.label));
-    const open = element('span', 'project-open', copy.ui?.openProject || 'Открыть проект');
-    open.setAttribute('aria-hidden', 'true');
-    meta.append(title, open);
-    card.append(art, meta);
+    const meta = element('span', 'folder-meta');
+    const hint = element('span', 'folder-hint');
+    hint.id = `folder-hint-${key}`;
+    meta.append(element('span', 'folder-title', p.title), element('span', 'folder-label', p.cardLabel || p.label), hint);
+    const arrow = element('span', 'folder-arrow', '↗');
+    arrow.setAttribute('aria-hidden', 'true');
+    trigger.append(number, art, meta, arrow);
+    card.append(trigger);
     grid.append(card);
   }
   grid.setAttribute('aria-busy', 'false');
+  selectFolder(pulledProject, false);
 }
+
+function selectFolder(key, announce = true) {
+  pulledProject = key;
+  grid.classList.toggle('has-selection', !!key);
+  for (const card of grid.querySelectorAll('.folder')) {
+    const selected = card.dataset.project === key;
+    const title = projects[card.dataset.project].title;
+    card.classList.toggle('is-active', selected);
+    const trigger = card.querySelector('.folder-trigger');
+    trigger.setAttribute('aria-expanded', String(selected));
+    trigger.setAttribute('aria-label', `${selected ? 'Открыть проект' : 'Выдвинуть папку'}: ${title}`);
+    card.querySelector('.folder-hint').textContent = selected
+      ? (needsSecondTap() ? 'Нажмите ещё раз, чтобы открыть проект' : 'Открыть проект ↗')
+      : 'Нажмите, чтобы выдвинуть папку';
+    if (selected) card.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
+  }
+  document.querySelector('#folder-current').textContent = key ? String(order.indexOf(key) + 1).padStart(2, '0') : '—';
+  document.querySelector('#folder-instruction').textContent = needsSecondTap()
+    ? 'Первый тап — выдвинуть папку. Второй — открыть проект.'
+    : 'Наведите, чтобы выдвинуть папку. Нажмите, чтобы открыть проект.';
+  if (announce && key) document.querySelector('#announcement').textContent = `Папка «${projects[key].title}» выдвинута. ${needsSecondTap() ? 'Нажмите ещё раз, чтобы открыть проект.' : ''}`;
+}
+
+function openFolder(key) {
+  const hash = `#project-${key}`;
+  document.querySelector('.mobile-nav').open = false;
+  if (location.hash !== hash) history.pushState(null, '', hash);
+  navigate(hash);
+}
+
+grid.addEventListener('pointerover', event => {
+  const card = event.target.closest('.folder');
+  if (card && !needsSecondTap() && event.pointerType !== 'touch' && pulledProject !== card.dataset.project) selectFolder(card.dataset.project, false);
+});
+grid.addEventListener('pointerdown', () => { keyboardInput = false; });
+grid.addEventListener('focusin', event => {
+  const card = event.target.closest('.folder');
+  if (card && keyboardInput && !needsSecondTap()) selectFolder(card.dataset.project, false);
+});
+grid.addEventListener('click', event => {
+  const trigger = event.target.closest('.folder-trigger');
+  if (!trigger) return;
+  const key = trigger.closest('.folder').dataset.project;
+  if (needsSecondTap() && pulledProject !== key) {
+    selectFolder(key);
+    return;
+  }
+  selectFolder(key, false);
+  openFolder(key);
+});
+grid.addEventListener('keydown', event => {
+  const trigger = event.target.closest('.folder-trigger');
+  if (!trigger) return;
+  const previous = verticalShelf.matches ? 'ArrowUp' : 'ArrowLeft';
+  const next = verticalShelf.matches ? 'ArrowDown' : 'ArrowRight';
+  if (![previous, next, 'Home', 'End'].includes(event.key)) return;
+  event.preventDefault();
+  keyboardInput = true;
+  const index = order.indexOf(trigger.closest('.folder').dataset.project);
+  const target = event.key === 'Home' ? 0 : event.key === 'End' ? order.length - 1 : (index + (event.key === next ? 1 : -1) + order.length) % order.length;
+  grid.querySelector(`[data-project="${order[target]}"] .folder-trigger`).focus();
+});
+document.addEventListener('keydown', event => { if (event.key === 'Tab') keyboardInput = true; });
+verticalShelf.addEventListener('change', () => selectFolder(needsSecondTap() ? null : pulledProject || lastProject, false));
+finePointer.addEventListener('change', () => selectFolder(needsSecondTap() ? null : pulledProject || lastProject, false));
+grid.addEventListener('transitionend', event => {
+  if (!verticalShelf.matches || event.propertyName !== 'height' || current.key) return;
+  const active = grid.querySelector('.folder.is-active');
+  if (event.target === active && active.getBoundingClientRect().top < 12) {
+    active.scrollIntoView({ block: 'start', behavior: reduced.matches ? 'instant' : 'smooth' });
+  }
+});
 
 const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
   entries.forEach(({ target, isIntersecting }) => {
@@ -271,7 +354,10 @@ async function navigate(hash, { initial = false, restoreHome = false } = {}) {
   }
   const previous = current;
   if (!previous.key) homeScroll = scrollY;
-  if (destination.key) lastProject = destination.key;
+  if (destination.key) {
+    lastProject = destination.key;
+    selectFolder(destination.key, false);
+  }
   const card = grid.querySelector(`[data-project="${destination.key || lastProject}"]`);
   clearTransitionNames();
   let source = !previous.key ? card?.querySelector('.project-art') : detail.querySelector('.case-lead');
@@ -316,7 +402,7 @@ async function navigate(hash, { initial = false, restoreHome = false } = {}) {
   if (token !== routeToken) return;
   clearTransitionNames();
   if (!initial && destination.key) detail.focus({ preventScroll: true });
-  else if (!initial && restoreHome) card?.focus({ preventScroll: true });
+  else if (!initial && restoreHome) card?.querySelector('.folder-trigger')?.focus({ preventScroll: true });
 }
 
 function openLightbox(index) {
