@@ -1,0 +1,65 @@
+/* Background artwork from v2. The original layout and image styles stay in styles.css. */
+body{
+  background:#eaf1f8 url('assets/ribbon-pattern-light.svg') center top / 1440px 1120px repeat;
+}
+#sergey-portfolio-concept{background:transparent}
+#sergey-portfolio-concept .sp-project-art{isolation:isolate}
+#sergey-portfolio-concept .sp-project-art::before,
+#sergey-portfolio-concept .sp-project-art::after{
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+}
+
+#sergey-portfolio-concept .sp-menus{
+  background:linear-gradient(115deg,#d4e3ee,#dfeaf0 55%,#c6e2ee);
+}
+#sergey-portfolio-concept .sp-bank{background:#e1ddeb}
+#sergey-portfolio-concept .sp-bank::before{
+  content:'';width:52%;height:100%;right:0;top:0;
+  background:#c8c4dc;border-top-left-radius:95%;
+}
+#sergey-portfolio-concept .sp-bank::after{
+  content:'';width:28%;height:22%;left:0;bottom:0;
+  background:#a8b6cf;border-top-right-radius:90px;
+}
+#sergey-portfolio-concept .sp-design{background:#dce4e4}
+#sergey-portfolio-concept .sp-design::before{
+  content:'';inset:0 0 0 60%;background:#c0cece;
+}
+#sergey-portfolio-concept .sp-design::after{
+  content:'';width:33%;height:30%;bottom:0;left:0;
+  background:#c5d2d8;border-top-right-radius:80px;
+}
+#sergey-portfolio-concept .sp-panel{
+  background:#1d354d url('assets/ribbon-pattern-dark.svg') center bottom / 720px 560px repeat;
+}
+#sergey-portfolio-concept .sp-merch{background:#e8e9df}
+#sergey-portfolio-concept .sp-merch::before{
+  content:'';width:60%;height:80%;right:0;top:0;
+  background:#d4dacb;border-bottom-left-radius:100%;
+}
+#sergey-portfolio-concept .sp-stickers{background:#fff}
+#sergey-portfolio-concept .sp-stickers::before{
+  content:'';width:80%;height:70%;left:10%;top:15%;
+  border:1px solid #dce4e9;border-radius:50%;
+}
+#sergey-portfolio-concept .sp-series{background:#e9e0d5}
+#sergey-portfolio-concept .sp-series::before{
+  content:'';inset:42% 0 0;background:#dbcebf;border-top-left-radius:90px;
+}
+#sergey-portfolio-concept .sp-sailor{background:#dce3ef}
+#sergey-portfolio-concept .sp-sailor::before{
+  content:'';width:58%;height:100%;right:0;top:0;
+  background:#c8d3e6;border-top-left-radius:100%;
+}
+#sergey-portfolio-concept .sp-selected{background:#d7e4e7}
+#sergey-portfolio-concept .sp-selected::before{
+  content:'';width:70%;height:85%;right:0;bottom:0;
+  background:#c1d5dc;border-top-left-radius:85%;
+}
+
+@media(max-width:760px){
+  body{background-size:1000px 778px;background-position:right top}
+  #sergey-portfolio-concept .sp-panel{background-size:640px 498px;background-position:right bottom}
+}
