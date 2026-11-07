@@ -8,18 +8,18 @@
   <title>Сергей Белик — иллюстрация и графический дизайн</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/manrope-medium.woff" as="font" type="font/woff" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20261107-folders-1">
-  <link rel="stylesheet" href="folders.css?v=20261107-folders-1">
+  <link rel="stylesheet" href="styles.css?v=20261107-folders-3">
+  <link rel="stylesheet" href="folders.css?v=20261107-folders-3">
 </head>
 <body>
   <a class="skip-link" href="#work">К работам</a>
   <header class="site-header wrap">
-    <a class="brand" href="#" aria-label="Белик Сергей — на главную">
+    <a class="brand" href="#" aria-label="Сергей Белик — на главную">
       <svg class="brand-mark" viewBox="392 284 468 674" aria-hidden="true">
         <path d="M647 484 C680 466 721 442 720 403 C722 365 698 332 650 330 L598 330 C537 330 492 367 493 425 C494 473 532 502 598 531 C705 576 804 629 804 725 C804 809 730 867 645 867 C555 867 509 805 509 737 L509 601" fill="none" stroke="#6082A8" stroke-width="41" stroke-linecap="round" stroke-linejoin="round"/>
         <path class="brand-corner" pathLength="1" d="M443 838 L443 874 C443 895 457 909 479 909 L511 909" fill="none" stroke="#D7755A" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span data-copy="brandName">Белик Сергей</span>
+      <span>Сергей Белик</span>
     </a>
     <nav class="desktop-nav" aria-label="Основная навигация">
       <a href="#work" data-copy-ui="navWork">Работы</a>
@@ -35,12 +35,12 @@
   <main id="home-view">
     <section class="hero exhibition-heading wrap" aria-labelledby="hero-title">
       <h1 id="hero-title" data-copy="heading">Векторный иллюстратор</h1>
-      <p data-copy="intro">Рисую персонажей и сюжетные сцены в стиле флэт.</p>
+      <h2 id="work-title" data-copy="worksTitle">Мои работы</h2>
     </section>
-    <section class="work exhibition wrap" id="work" aria-labelledby="work-title">
-      <div class="shelf-heading"><h2 id="work-title" data-copy="worksTitle">Мои работы</h2><p id="folder-instruction">Выберите папку с проектом</p></div>
+    <section class="work exhibition" id="work" aria-labelledby="work-title">
+      <p id="folder-instruction">Выберите папку с проектом</p>
       <div class="folder-shelf" id="project-grid" aria-busy="true" role="group" aria-labelledby="work-title"></div>
-      <div class="shelf-bottom"><p class="shelf-counter"><span id="folder-current">01</span><span class="muted"> / 09</span></p><span class="shelf-rule" aria-hidden="true"></span><a href="#about" data-copy-ui="navAbout">Обо мне</a></div>
+      <div class="shelf-bottom wrap"><p class="shelf-counter"><span id="folder-current">01</span><span class="muted"> / 09</span></p><span class="shelf-rule" aria-hidden="true"></span><a href="#about">Связаться</a></div>
       <noscript><p>Для просмотра портфолио включите JavaScript.</p></noscript>
     </section>
     <section class="about wrap" id="about" aria-labelledby="about-title">
@@ -60,6 +60,6 @@
     <div class="lightbox-bottom"><button type="button" data-previous>Назад</button><p id="lightbox-caption"></p><button type="button" data-next>Далее</button></div>
   </dialog>
   <script src="../content.js"></script>
-  <script src="app.js?v=20261107-folders-1" type="module"></script>
+  <script src="app.js?v=20261107-folders-3" type="module"></script>
 </body>
 </html>

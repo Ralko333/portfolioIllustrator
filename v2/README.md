@@ -4,9 +4,9 @@ The original site is served from the repository root. This separate design is se
 
 No build step or external dependencies. Preview the repository with a static HTTP server. Project links use `#project-<key>` and optional group anchors, including `#project-design/menu-layout`.
 
-The homepage is a dark, full-width shelf of nine illustrated project folders in the original section order. On desktop, pointer hover or keyboard focus pulls out a folder; clicking opens its case. Arrow keys, Home, and End move between folder controls. Each case retains the existing media, sections, publication links, image viewer, and matching previous/next navigation.
+The homepage follows the approved dark file-shelf reference: one horizontal accordion of nine illustrated folders, all visible at once, with one expanded folder and the remaining illustrated spines. The compact heading and “Мои работы” share a line, the shelf spans the page width, and the counter sits below it. Hover or keyboard focus pulls out a folder; clicking opens its existing case. Case media, publication links, image viewer, and previous/next navigation are preserved.
 
-At widths up to 1000px, the same shelf runs vertically. It starts with every folder compact. The first tap pulls out a folder and displays “Нажмите ещё раз, чтобы открыть проект”; a second tap on that same folder opens the case. Tapping a different folder selects it instead. Touch devices use the same two-step opening even when the viewport is wider. The page scrolls vertically without capturing swipe gestures. Returning from a case keeps the selected folder and restores the gallery position.
+At widths up to 700px, the same accordion runs vertically. Compact folders show a bright strip of their artwork before interaction. The first tap pulls out a folder and displays “Нажмите ещё раз, чтобы открыть проект”; a second tap on that folder opens the case. Selecting another folder expands it instead. Vertical scrolling is not intercepted. Returning from a case restores the selected folder and gallery position.
 
 Images retain their original colors. The original logo and all nine sections are preserved; bank artwork corners remain clipped in previews, cases, and the image viewer. `folders.css` provides the new shelf and dark theme above the reusable case styles. The public interface does not link to the original version.
 

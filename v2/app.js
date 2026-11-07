@@ -3,7 +3,7 @@ const { assets, previews, dimensions, projects } = window.PORTFOLIO_DATA;
 const order = ['menus', 'bank', 'design', 'panel', 'merch', 'stickers', 'series', 'sailor', 'selected'];
 const compositions = {
   menus: ['winterFront', 'springFront'], bank: ['bankNight', 'bankSpring'],
-  design: ['restored43', 'vlavasheFront', 'spaffyPost'], panel: ['panel'],
+  design: ['vlavasheFront', 'spaffyPost'], panel: ['panel', 'panel'],
   merch: ['merchOne', 'merchTwo'], stickers: ['stickerOne', 'stickerTwo', 'stickerThree'],
   series: ['worldOne', 'worldTwo', 'worldThree'], sailor: ['restored63', 'restored64'], selected: ['imaginationFlood']
 };
@@ -12,7 +12,7 @@ const detail = document.querySelector('#case-view');
 const grid = document.querySelector('#project-grid');
 const dialog = document.querySelector('#lightbox');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-const verticalShelf = matchMedia('(max-width: 1000px)');
+const verticalShelf = matchMedia('(max-width: 700px)');
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
 const needsSecondTap = () => verticalShelf.matches || !finePointer.matches;
 const bankAssets = new Set(projects.bank.media.slice(0, 5).map(([key]) => key));
@@ -128,8 +128,9 @@ function selectFolder(key, announce = true) {
     const title = projects[card.dataset.project].title;
     card.classList.toggle('is-active', selected);
     const trigger = card.querySelector('.folder-trigger');
-    trigger.setAttribute('aria-expanded', String(selected));
-    trigger.setAttribute('aria-label', `${selected ? 'Открыть проект' : 'Выдвинуть папку'}: ${title}`);
+    if (needsSecondTap()) trigger.setAttribute('aria-expanded', String(selected));
+    else trigger.removeAttribute('aria-expanded');
+    trigger.setAttribute('aria-label', `${!needsSecondTap() || selected ? 'Открыть проект' : 'Выдвинуть папку'}: ${title}`);
     card.querySelector('.folder-hint').textContent = selected
       ? (needsSecondTap() ? 'Нажмите ещё раз, чтобы открыть проект' : 'Открыть проект ↗')
       : 'Нажмите, чтобы выдвинуть папку';
@@ -138,7 +139,7 @@ function selectFolder(key, announce = true) {
   document.querySelector('#folder-current').textContent = key ? String(order.indexOf(key) + 1).padStart(2, '0') : '—';
   document.querySelector('#folder-instruction').textContent = needsSecondTap()
     ? 'Первый тап — выдвинуть папку. Второй — открыть проект.'
-    : 'Наведите, чтобы выдвинуть папку. Нажмите, чтобы открыть проект.';
+    : 'Нажмите на превью, чтобы открыть проект.';
   if (announce && key) document.querySelector('#announcement').textContent = `Папка «${projects[key].title}» выдвинута. ${needsSecondTap() ? 'Нажмите ещё раз, чтобы открыть проект.' : ''}`;
 }
 
