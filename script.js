@@ -198,7 +198,7 @@
         if(p.subheadings?.[index]){const heading=document.createElement('h4');heading.className='sp-gallery-subheading';heading.textContent=p.subheadings[index];gallery.append(heading)}
         const figure=document.createElement('figure'),visual=document.createElement('button'),img=document.createElement('img'),caption=document.createElement('figcaption'),label=document.createElement('span');
         figure.classList.toggle('sp-media-published',!!published);figure.classList.toggle('sp-media-featured',asset==='imaginationFlood');if(wide)figure.style.gridColumn='1 / -1';
-        visual.type='button';visual.className='sp-media-art';visual.setAttribute('aria-label','Увеличить: '+alt);visual.addEventListener('click',()=>openImage(p.media,index));
+        visual.type='button';visual.className='sp-media-art';visual.classList.toggle('sp-media-bank',bankCardAssets.has(asset));visual.classList.toggle('sp-media-wide',!!wide||(key==='panel'&&index===0));visual.setAttribute('aria-label','Увеличить: '+alt);visual.addEventListener('click',()=>openImage(p.media,index));
         img.src=previews[asset];img.alt=alt;img.dataset.asset=asset;img.classList.toggle('sp-bank-card',bankCardAssets.has(asset));img.loading='lazy';img.decoding='async';[img.width,img.height]=dimensions[asset];label.textContent=alt;visual.append(img);caption.append(label);
         if(Number.isInteger(linkIndex)){const [linkLabel,url]=p.proof.links[linkIndex];if(!usedLinks.has(url)){caption.append(publicationLink(linkLabel,url));usedLinks.add(url)}}
         figure.append(visual,caption);gallery.append(figure);

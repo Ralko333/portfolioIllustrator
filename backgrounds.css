@@ -59,6 +59,24 @@ body{
   background:#c1d5dc;border-top-left-radius:85%;
 }
 
+/* Match the image stages inside v2 cases, including proof and wide variants. */
+#sergey-portfolio-concept .sp-case .sp-case-gallery .sp-media-art{background:#e8edf0}
+#sergey-portfolio-concept .sp-case .sp-case-gallery .sp-media-bank{background:#e1ddeb}
+#sergey-portfolio-concept .sp-case .sp-case-gallery .sp-media-art.sp-media-wide{background:#dfe8eb}
+#sergey-portfolio-concept .sp-case .sp-case-gallery .sp-media-published .sp-media-art{background:#e9edef}
+
+/* Keep the page ribbon continuous behind the project navigation. */
+#sergey-portfolio-concept .sp-case-nav{background:transparent}
+#sergey-portfolio-concept .sp-case-nav button{background:#eaf1f8}
+
+/* Bring the existing ribbon into the free space beside the introduction. */
+@media(min-width:1100px){
+  body:has(.sp-home:not([hidden])){
+    background-size:1700px 1322px;
+    background-position:calc(50% - 32px) top;
+  }
+}
+
 @media(max-width:760px){
   body{background-size:1000px 778px;background-position:right top}
   #sergey-portfolio-concept .sp-panel{background-size:640px 498px;background-position:right bottom}
