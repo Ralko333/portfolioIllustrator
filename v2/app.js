@@ -159,6 +159,12 @@ grid.addEventListener('click', event => {
   const trigger = event.target.closest('.folder-trigger');
   if (!trigger) return;
   const key = trigger.closest('.folder').dataset.project;
+  const headerTap = event.target.closest('.folder-number, .folder-meta') && !event.target.closest('.folder-hint');
+  if (needsSecondTap() && pulledProject === key && headerTap) {
+    selectFolder(null, false);
+    document.querySelector('#announcement').textContent = `Проект «${projects[key].title}» свёрнут.`;
+    return;
+  }
   if (needsSecondTap() && pulledProject !== key) {
     selectFolder(key);
     return;
