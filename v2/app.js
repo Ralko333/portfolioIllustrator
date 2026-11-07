@@ -2,7 +2,7 @@ const rootURL = new URL('../', document.baseURI);
 const { assets, previews, dimensions, projects } = window.PORTFOLIO_DATA;
 const order = ['menus', 'bank', 'design', 'panel', 'merch', 'stickers', 'series', 'sailor', 'selected'];
 const compositions = {
-  menus: ['winterFront', 'springFront'], bank: ['bankNight', 'bankSpring'],
+  menus: ['winterFront', 'springFront', 'restored45'], bank: ['bankNight', 'bankSpring'],
   design: ['restored43', 'vlavasheFront', 'spaffyPost'], panel: ['panel'],
   merch: ['merchOne', 'merchTwo'], stickers: ['stickerOne', 'stickerTwo', 'stickerThree'],
   series: ['worldOne', 'worldTwo', 'worldThree'], sailor: ['restored63', 'restored64'], selected: ['imaginationFlood']

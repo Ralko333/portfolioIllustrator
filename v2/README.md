@@ -6,6 +6,8 @@ No build step or external dependencies. Preview the repository with a static HTT
 
 The layout has a fixed two-column grid, wide menu/panorama previews, and a centered final project. Below 520px, it uses one column. Images retain their original colors and proportions. Bank artwork corners are clipped consistently in previews, projects, and the image viewer.
 
+The approved rounded variant uses a compact two-column introduction, a large heading, and three original seasonal covers filling the first preview. Preview frames repeat one rounded bottom-left corner. Smaller screens stack the introduction and reduce the frame radius and inner spacing.
+
 The page background uses an abstract ribbon pattern based on the logo's curves and orange corner. The panorama and its caption share a patterned navy background spanning the page width; the artwork stays aligned with the other projects. Each case has matching previous/next project links. The public interface does not link to the original version.
 
 Animations use CSS and the native View Transition API when available, with a fade fallback. System reduced-motion preferences disable animated transitions. The original site and this version can be compared by URL; neither redirects to the other.
