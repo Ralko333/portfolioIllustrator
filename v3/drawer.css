@@ -149,6 +149,27 @@ body { background: var(--paper); color: var(--ink); }
 
 .drawer-interior .is-active .folder-number { background: var(--folder-band); }
 .drawer-interior .folder .project-art { inset: var(--folder-tab) 0 var(--folder-caption); width: auto; z-index: 0; }
+
+/* Each card keeps the embossed paper drawing but varies its tint and crop. */
+.drawer-interior .folder .project-art {
+  background-image:
+    linear-gradient(var(--folder-paper-wash), var(--folder-paper-wash)),
+    url('folder-paper.svg?v=20261108-neutral-1');
+  background-color: #f1e8da;
+  background-size: 100% 100%, cover;
+  background-position: center, var(--folder-paper-x) var(--folder-paper-y);
+  background-repeat: no-repeat;
+}
+.drawer-interior .folder:nth-child(1) { --folder-paper-wash: rgba(255, 248, 231, .15); --folder-paper-x: 48%; --folder-paper-y: 48%; }
+.drawer-interior .folder:nth-child(2) { --folder-paper-wash: rgba(96, 130, 168, .13); --folder-paper-x: 53%; --folder-paper-y: 51%; }
+.drawer-interior .folder:nth-child(3) { --folder-paper-wash: rgba(215, 117, 90, .11); --folder-paper-x: 46%; --folder-paper-y: 54%; }
+.drawer-interior .folder:nth-child(4) { --folder-paper-wash: rgba(76, 113, 151, .10); --folder-paper-x: 55%; --folder-paper-y: 46%; }
+.drawer-interior .folder:nth-child(5) { --folder-paper-wash: rgba(234, 208, 175, .23); --folder-paper-x: 49%; --folder-paper-y: 53%; }
+.drawer-interior .folder:nth-child(6) { --folder-paper-wash: rgba(96, 130, 168, .18); --folder-paper-x: 52%; --folder-paper-y: 47%; }
+.drawer-interior .folder:nth-child(7) { --folder-paper-wash: rgba(215, 117, 90, .15); --folder-paper-x: 47%; --folder-paper-y: 51%; }
+.drawer-interior .folder:nth-child(8) { --folder-paper-wash: rgba(149, 169, 185, .14); --folder-paper-x: 54%; --folder-paper-y: 49%; }
+.drawer-interior .folder:nth-child(9) { --folder-paper-wash: rgba(218, 178, 151, .17); --folder-paper-x: 50%; --folder-paper-y: 55%; }
+
 .drawer-interior .folder-meta { left: 0; padding: 7px calc(var(--folder-content-inset) + var(--under-next)) 6px var(--folder-text-inset); background: var(--folder-caption-band); border: 0; border-top: 1px solid #7292aa; color: #172d40; z-index: 4; }
 .drawer-interior .is-active .folder-meta { padding: 8px calc(var(--folder-content-inset) + var(--under-next)) 7px var(--folder-text-inset); }
 .drawer-interior .folder-title { font-size: clamp(11px, 1vw, 17px); }
