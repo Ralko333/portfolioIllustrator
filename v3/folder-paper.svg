@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="840" viewBox="320 230 650 840">
+  <defs>
+    <filter id="relief" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="1" dy="3" stdDeviation="0.6" flood-color="#061725" flood-opacity="0.9"/>
+      <feDropShadow dx="-1" dy="-1" stdDeviation="0.4" flood-color="#698eaa" flood-opacity="0.27"/>
+    </filter>
+  </defs>
+  <path fill="#6082a8" d="M320 230H970V1070H320Z"/>
+  <path fill="#d7755a" d="M320 770C480 740 570 800 650 900L750 1070H320Z"/>
+  <path fill="#fff8ec" d="M520 230H970V610C830 560 760 470 680 410S580 350 520 230Z"/>
+  <g transform="rotate(-12 620 610)" fill="none" stroke="#7699ba" stroke-linecap="round" filter="url(#relief)">
+    <path d="M647 484 C680 466 721 442 720 403 C722 365 698 332 650 330 L598 330 C537 330 492 367 493 425 C494 473 532 502 598 531 C705 576 804 629 804 725 C804 809 730 867 645 867 C555 867 509 805 509 737 L509 601" stroke-width="41"/>
+    <path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909" stroke-width="34"/>
+  </g>
+</svg>

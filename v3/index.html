@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f9f4ec">
+  <meta name="description" content="Сергей Белик — коммерческий векторный иллюстратор. Иллюстрации для J’PAN, личные проекты и графический дизайн.">
+  <title>Сергей Белик — иллюстрация и графический дизайн</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/manrope-medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=20261108-folders-9">
+  <link rel="stylesheet" href="folders.css?v=20261108-folders-9">
+  <link rel="stylesheet" href="drawer.css?v=20261108-drawer-1">
+</head>
+<body>
+  <a class="skip-link" href="#work">К работам</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Сергей Белик — на главную">
+      <svg class="brand-mark" viewBox="392 284 468 674" aria-hidden="true">
+        <path d="M647 484 C680 466 721 442 720 403 C722 365 698 332 650 330 L598 330 C537 330 492 367 493 425 C494 473 532 502 598 531 C705 576 804 629 804 725 C804 809 730 867 645 867 C555 867 509 805 509 737 L509 601" fill="none" stroke="#6082A8" stroke-width="41" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="brand-corner" pathLength="1" d="M443 838 L443 874 C443 895 457 909 479 909 L511 909" fill="none" stroke="#D7755A" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Сергей Белик</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Основная навигация">
+      <a href="#work" data-copy-ui="navWork">Работы</a>
+      <a href="#about" data-copy-ui="navAbout">Обо мне</a>
+    </nav>
+    <details class="mobile-nav">
+      <summary>Меню</summary>
+      <nav aria-label="Мобильная навигация">
+        <a href="#work">Работы</a><a href="#about">Обо мне</a>
+      </nav>
+    </details>
+  </header>
+  <main id="home-view">
+    <section class="hero exhibition-heading wrap" aria-labelledby="hero-title">
+      <h1 id="hero-title" data-copy="heading">Векторный иллюстратор</h1>
+      <h2 id="work-title" data-copy="worksTitle">Мои работы</h2>
+    </section>
+    <section class="work exhibition" id="work" aria-labelledby="work-title">
+      <p id="folder-instruction" class="sr-only">Выберите проект</p>
+      <p id="drawer-instruction" class="sr-only">Потяните ручку вправо или нажмите её, чтобы открыть ящик с проектами.</p>
+      <div class="drawer-scene" id="portfolio-drawer" data-state="closed">
+        <div class="drawer-tray" id="drawer-tray">
+          <div class="drawer-interior" id="drawer-interior" inert aria-hidden="true">
+            <div class="folder-shelf" id="project-grid" aria-busy="true" role="group" aria-labelledby="work-title"></div>
+          </div>
+          <div class="drawer-front">
+            <button class="drawer-handle" id="drawer-handle" type="button" aria-label="Открыть ящик с проектами" aria-expanded="false" aria-controls="drawer-interior" aria-describedby="drawer-instruction">
+              <span class="drawer-cue" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+        <div class="drawer-cabinet" aria-hidden="true">
+          <div class="cabinet-top">
+            <svg class="cabinet-prop prop-coffee" viewBox="0 0 150 150" focusable="false">
+              <path fill="#284c6b" d="M20 41C39 8 92 8 116 40L143 77C155 95 146 115 125 117L100 139C60 158 9 124 12 86Z"/>
+              <path fill="#fff7e7" d="M99 40H119C151 40 150 91 121 91H101V76H119C132 76 132 55 118 55H99Z"/>
+              <circle cx="67" cy="65" r="53" fill="#d6dfea"/>
+              <circle cx="65" cy="61" r="50" fill="#fff9ed"/>
+              <circle cx="65" cy="61" r="40" fill="#673d2b"/>
+              <path fill="#a76b3e" d="M80 24A40 40 0 0 1 88 92L77 91C93 70 93 45 80 24Z"/>
+              <g fill="#f2cb8c"><circle cx="86" cy="39" r="4"/><circle cx="91" cy="50" r="3"/><circle cx="92" cy="62" r="5"/><circle cx="89" cy="75" r="4"/><circle cx="82" cy="85" r="3"/></g>
+            </svg>
+            <svg class="cabinet-prop prop-gamepad" viewBox="0 0 190 125" focusable="false">
+              <path fill="#284c6b" d="M36 18C53 7 66 19 83 19H119C137 8 156 15 165 36L188 100C194 128 170 137 150 117L128 98H76L51 119C30 138 6 124 12 101L27 38Z"/>
+              <path fill="#fff9ee" d="M30 10C45 0 61 14 77 14H113C131 2 151 7 159 29L181 90C188 115 164 123 146 104L123 84H70L45 106C25 122 2 108 8 87L23 29Z"/>
+              <path fill="#365f88" d="M43 28H54V40H66V51H54V63H43V51H31V40H43Z"/>
+              <g fill="#d7755a"><circle cx="135" cy="28" r="7"/><circle cx="149" cy="42" r="7"/><circle cx="121" cy="42" r="7"/><circle cx="135" cy="56" r="7"/></g>
+              <g fill="#365f88"><circle cx="72" cy="69" r="13"/><circle cx="109" cy="69" r="13"/></g>
+              <path stroke="#e5cdb6" stroke-width="4" stroke-linecap="round" d="M83 43H96"/>
+            </svg>
+            <svg class="cabinet-prop prop-pencil" viewBox="0 0 220 36" focusable="false">
+              <path fill="#284c6b" d="M9 11H180L219 27L180 35H10Z"/>
+              <path fill="#d7755a" d="M8 3H175V25H8Q0 25 0 17V11Q0 3 8 3Z"/>
+              <path fill="#efac8f" d="M8 3H175V10H0Q0 3 8 3Z"/>
+              <path fill="#fff0d6" d="M175 3L213 14L175 25Z"/>
+              <path fill="#294d6b" d="M199 10L213 14L199 18Z"/>
+              <path fill="#fff7e7" d="M19 3H28V25H19Z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="shelf-bottom wrap"><p class="shelf-counter"><span id="folder-current">01</span><span class="muted"> / 09</span></p><span class="shelf-rule" aria-hidden="true"></span><a href="#about">Связаться</a></div>
+      <noscript><p>Для просмотра портфолио включите JavaScript.</p></noscript>
+    </section>
+    <section class="about wrap" id="about" aria-labelledby="about-title">
+      <div><p class="eyebrow" data-copy="aboutEyebrow">Сергей Белик / Коммерческий иллюстратор</p><h2 id="about-title" data-copy="aboutTitle">Обо мне</h2></div>
+      <div class="about-copy"><p class="about-lead" data-copy="introExtra"></p><p data-copy="aboutIntro"></p><p data-copy="aboutExtra"></p><p data-copy="about3d"></p></div>
+    </section>
+  </main>
+  <main id="case-view" class="case wrap" hidden tabindex="-1"></main>
+  <footer class="site-footer wrap">
+    <div><p data-copy="footerName">Сергей Белик</p><p class="muted" data-copy="footerRole">Коммерческий векторный иллюстратор</p></div>
+    <div class="footer-links"><a href="#work">К работам</a><a href="#">Наверх ↑</a></div>
+  </footer>
+  <p class="sr-only" id="announcement" aria-live="polite"></p>
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
+    <div class="lightbox-toolbar"><button type="button" data-zoom aria-pressed="false">Увеличить</button><a data-original target="_blank" rel="noopener noreferrer">Открыть изображение ↗</a><button type="button" data-close autofocus>Закрыть</button></div>
+    <div class="lightbox-stage"><img alt=""></div>
+    <div class="lightbox-bottom"><button type="button" data-previous>Назад</button><p id="lightbox-caption"></p><button type="button" data-next>Далее</button></div>
+  </dialog>
+  <script src="../content.js"></script>
+  <script src="app.js?v=20261108-drawer-1" type="module"></script>
+</body>
+</html>

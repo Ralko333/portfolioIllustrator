@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120" fill="none">
+  <defs><path id="ribbon" d="M1070-80V40C1070 150 1130 190 1240 190C1320 190 1330 340 1400 340H1520 M-80 340H40C150 340 180 410 180 520V700C180 790 240 840 350 840H910C1020 840 1070 890 1070 1000V1200"/></defs>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <use href="#ribbon" stroke="#bcd0e2" stroke-width="67"/>
+    <use href="#ribbon" stroke="#d8e4f0" stroke-width="64"/>
+    <path d="M1200 670V742C1200 764 1214 778 1236 778H1310" stroke="#d7ae9d" stroke-width="7"/>
+    <path d="M1217 670V738C1217 753 1225 761 1240 761H1310" stroke="#d7ae9d" stroke-width="1.4"/>
+    <path d="M900 70V118C900 138 912 150 932 150H982" stroke="#caa28e" stroke-width="2"/>
+    <path d="M48 1010V1040C48 1060 60 1072 80 1072H120" stroke="#d7ae9d" stroke-width="5"/>
+  </g>
+</svg>
