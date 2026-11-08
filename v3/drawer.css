@@ -172,7 +172,10 @@ body { background: var(--paper); color: var(--ink); }
 .contacts { padding-bottom: 48px; }
 .contacts h2 { font-size: 24px; font-weight: 500; letter-spacing: -.025em; margin-bottom: 16px; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 12px 32px; font-size: 15px; }
-.contact-links a { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--orange); }
+.contact-links a { display: inline-flex; align-items: center; gap: 10px; max-width: 100%; text-decoration: none; }
+.contact-links a span { min-width: 0; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--orange); }
+.contact-icon { width: 36px; height: 36px; flex: 0 0 36px; }
+.contact-icon-mail { transform: rotate(-7deg); }
 
 @media (max-width: 1000px) and (min-width: 701px) {
   :root { --folder-number-size: 14px; --folder-content-inset: 8px; }
