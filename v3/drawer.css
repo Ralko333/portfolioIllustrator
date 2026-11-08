@@ -12,6 +12,7 @@
   --folder-accent-offset: clamp(8px, .65vw, 14px);
   --folder-text-inset: calc(var(--folder-accent-offset) + var(--folder-content-inset));
   --folder-band: linear-gradient(#fff, #fff) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, linear-gradient(105deg, #e49277, #d7755a);
+  --folder-caption-band: linear-gradient(#fff, #fff) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, linear-gradient(105deg, #6e90b2, #6082a8);
   color-scheme: light;
   background: var(--paper);
 }
@@ -144,7 +145,7 @@ body { background: var(--paper); color: var(--ink); }
 
 .drawer-interior .is-active .folder-number { background: var(--folder-band); }
 .drawer-interior .folder .project-art { inset: var(--folder-tab) 0 var(--folder-caption); width: auto; z-index: 0; }
-.drawer-interior .folder-meta { left: 0; padding: 12px calc(var(--folder-content-inset) + var(--under-next)) 10px var(--folder-text-inset); background: var(--folder-band); border: 0; border-top: 1px solid #b9664e; color: #132636; z-index: 4; }
+.drawer-interior .folder-meta { left: 0; padding: 12px calc(var(--folder-content-inset) + var(--under-next)) 10px var(--folder-text-inset); background: var(--folder-caption-band); border: 0; border-top: 1px solid #6489a8; color: #08151f; z-index: 4; }
 .drawer-interior .is-active .folder-meta { padding-left: var(--folder-text-inset); padding-right: calc(var(--folder-content-inset) + var(--under-next)); }
 .drawer-interior .folder-title { font-size: clamp(11px, 1.08vw, 20px); }
 .drawer-interior .is-active .folder-title { font-size: clamp(22px, 2.05vw, 38px); }
