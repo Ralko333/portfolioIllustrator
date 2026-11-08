@@ -78,12 +78,12 @@ body { background: var(--paper); color: var(--ink); }
   position: absolute;
   top: 50%;
   left: calc(100% - 1px);
-  width: clamp(24px, 2.2vw, 34px);
-  height: clamp(94px, 20%, 166px);
+  width: clamp(18px, 1.6vw, 26px);
+  height: clamp(64px, 13%, 110px);
   padding: 0;
-  border: clamp(7px, .7vw, 11px) solid #fff0d7;
+  border: clamp(5px, .5vw, 8px) solid #fff0d7;
   border-left: 0;
-  border-radius: 0 13px 13px 0;
+  border-radius: 0 10px 10px 0;
   background: transparent;
   box-shadow: 5px 4px 0 #294b6b40;
   transform: translateY(-50%);
@@ -125,7 +125,7 @@ body { background: var(--paper); color: var(--ink); }
 .prop-coffee { width: clamp(98px, 10vw, 166px); left: calc(var(--cabinet-hidden) - 85px); top: 9%; }
 .prop-gamepad { --gamepad-width: calc(clamp(98px, 10vw, 166px) * 1.5); width: var(--gamepad-width); left: auto; right: calc(12px + var(--gamepad-width) * .09); top: 45%; transform: rotate(-16deg); filter: none; overflow: visible; z-index: 4; }
 .prop-pencil { width: clamp(120px, 12vw, 194px); left: calc(var(--cabinet-hidden) - 67px); top: 85%; }
-.prop-eraser { width: clamp(43px, 4vw, 65px); left: calc(var(--cabinet-hidden) + 8px); right: auto; top: 78%; transform: rotate(-12deg); }
+.prop-eraser { width: clamp(43px, 4vw, 65px); left: auto; right: clamp(45px, 4.5vw, 70px); top: clamp(16px, 2.1vw, 30px); transform: rotate(-12deg); }
 .prop-paperclip { width: clamp(16px, 1.25vw, 21px); left: auto; right: clamp(10px, 1.15vw, 18px); top: clamp(8px, 1.25vw, 16px); transform: rotate(-12deg); }
 
 /* The existing accordion keeps its order, widths, artwork and layer order. */
@@ -251,7 +251,7 @@ body { background: var(--paper); color: var(--ink); }
   }
   .drawer-interior { height: auto; }
   .drawer-front { inset: auto -5px 0; width: auto; height: var(--front-size); border-right-width: 3px; border-bottom-width: 5px; }
-  .drawer-handle { top: calc(100% - 1px); left: 50%; width: 112px; height: 27px; border: 8px solid #fff0d7; border-top: 0; border-radius: 0 0 12px 12px; transform: translateX(-50%); }
+  .drawer-handle { top: calc(100% - 1px); left: 50%; width: 80px; height: 20px; border: 6px solid #fff0d7; border-top: 0; border-radius: 0 0 9px 9px; transform: translateX(-50%); }
   .drawer-cue { top: calc(100% + 7px); left: 50%; width: 140px; transform: translateX(-50%) rotate(-7deg); }
   .drawer-cabinet { inset: var(--scene-gap) 0 auto; width: 100%; height: var(--cabinet-peek); padding: 7px; border-radius: 5px; border-right-width: 3px; }
   .cabinet-top::before { clip-path: polygon(0 0, 65% 0, 0 100%); }
@@ -260,7 +260,7 @@ body { background: var(--paper); color: var(--ink); }
   .prop-coffee { width: clamp(88px, 24vw, 115px); left: 7%; top: 10%; }
   .prop-gamepad { width: clamp(110px, 31vw, 160px); left: 48%; right: auto; top: 40%; }
   .prop-pencil { width: clamp(90px, 26vw, 132px); left: 57%; top: 84%; }
-  .prop-eraser { width: 43px; left: 20%; top: 76%; }
+  .prop-eraser { width: 43px; left: 41%; right: auto; top: 76%; transform: rotate(-12deg); }
   .prop-paperclip { width: 23px; left: auto; right: 13%; top: 13%; }
   .drawer-interior .folder-shelf { width: 100%; height: auto; margin: 0; padding: 0; }
   .drawer-interior .folder.project { height: calc(clamp(112px, 15.2svh, 145px) + var(--under-next)); }
