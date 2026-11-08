@@ -212,7 +212,7 @@ body { background: var(--paper); color: var(--ink); }
 @media (max-width: 700px) {
   :root { --folder-tab: 22px; --folder-caption: 33px; --folder-number-size: 12px; --folder-content-inset: 8px; }
   .drawer-scene {
-    --cabinet-peek: calc(100vw - 28px);
+    --cabinet-peek: clamp(198px, 65vw, 380px);
     --front-size: 31px;
     --rim: 9px;
     --handle-clearance: 112px;
