@@ -1,4 +1,5 @@
 export function createDrawer({ verticalShelf, reduced }) {
+  const page = document.documentElement;
   const scene = document.querySelector('#portfolio-drawer');
   const tray = document.querySelector('#drawer-tray');
   const interior = document.querySelector('#drawer-interior');
@@ -26,11 +27,13 @@ export function createDrawer({ verticalShelf, reduced }) {
     interior.setAttribute('aria-hidden', String(!open));
     handle.setAttribute('aria-expanded', String(open));
     handle.setAttribute('aria-label', `${open ? 'Закрыть' : 'Открыть'} ящик с проектами`);
+    page.classList.remove('is-drawer-moving');
     if (announce) announcement.textContent = open ? 'Ящик открыт. Выберите проект.' : 'Ящик закрыт.';
   }
 
   function settle(open, immediate = false, announce = true) {
     clearTimeout(settlementTimer);
+    page.classList.add('is-drawer-moving');
     scene.classList.toggle('is-dragging', immediate || reduced.matches);
     interior.inert = true;
     interior.setAttribute('aria-hidden', 'true');
@@ -67,6 +70,9 @@ export function createDrawer({ verticalShelf, reduced }) {
 
   handle.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0) return;
+    // Keep focus and scroll anchoring from following the moving handle.
+    event.preventDefault();
+    page.classList.add('is-drawer-moving');
     clearTimeout(settlementTimer);
     // Resume a gesture from the visible position, including during a settling animation.
     const transform = new DOMMatrixReadOnly(getComputedStyle(tray).transform);

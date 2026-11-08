@@ -1,4 +1,4 @@
-import { createDrawer } from './drawer.js?v=20261108-drawer-3';
+import { createDrawer } from './drawer.js?v=20261108-drawer-4';
 
 const rootURL = new URL('../', document.baseURI);
 const { assets, previews, dimensions, projects } = window.PORTFOLIO_DATA;

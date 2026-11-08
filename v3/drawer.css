@@ -14,6 +14,7 @@
 }
 
 body { background: var(--paper); color: var(--ink); }
+:root.is-drawer-moving, :root.is-drawer-moving body { overflow-anchor: none; }
 .desktop-nav a:first-child { text-decoration-color: var(--orange); }
 .exhibition-heading h2 { border-color: var(--rule); }
 .exhibition.work { padding-top: 3px; }
@@ -111,7 +112,7 @@ body { background: var(--paper); color: var(--ink); }
 .cabinet-top::before { content: ''; position: absolute; inset: 0; background: #fff0d7; clip-path: polygon(0 0, 100% 0, 0 78%); }
 .cabinet-prop { position: absolute; }
 .prop-coffee { width: clamp(98px, 10vw, 166px); left: calc(var(--cabinet-hidden) - 60px); top: 9%; }
-.prop-gamepad { width: clamp(118px, 13vw, 210px); left: calc(var(--cabinet-hidden) - 40px); top: 45%; transform: rotate(-16deg); }
+.prop-gamepad { --gamepad-width: calc((var(--cabinet-peek) - 34px) / 1.2); width: var(--gamepad-width); left: calc(var(--cabinet-hidden) + (var(--cabinet-peek) - var(--gamepad-width)) / 2 - 12px); top: 45%; transform: rotate(-16deg); }
 .prop-pencil { width: clamp(120px, 12vw, 194px); left: calc(var(--cabinet-hidden) - 67px); top: 85%; }
 .prop-eraser { width: clamp(43px, 4vw, 65px); left: calc(var(--cabinet-hidden) + 38px); top: 72%; transform: rotate(13deg); }
 .prop-paperclip { width: clamp(18px, 1.75vw, 27px); left: calc(var(--cabinet-hidden) + 63px); top: 34%; transform: rotate(-24deg); }
