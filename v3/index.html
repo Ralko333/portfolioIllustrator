@@ -74,8 +74,10 @@
               <path d="M18 129H80" stroke="#6082a8" stroke-width="4" stroke-linecap="round"/>
             </svg>
             <svg class="cabinet-prop prop-coffee" viewBox="0 0 150 150" focusable="false">
-              <path fill="#284c6b" d="M20 41C39 8 92 8 116 40L143 77C155 95 146 115 125 117L100 139C60 158 9 124 12 86Z"/>
-              <path fill="#fff9ed" stroke="#d5c8b8" stroke-width="1.5" stroke-linejoin="round" d="M108 41C128 31 148 43 148 65C148 87 131 101 108 92L109 79C127 86 136 78 136 65C136 54 127 49 108 54Z"/>
+              <!-- Offset mug-body shadow ends before the handle opening; the tabletop stays visible through the handle. -->
+              <circle cx="67" cy="75" r="52" fill="#284c6b"/>
+              <!-- A single open loop, seen from above and tucked behind the cup rim. -->
+              <path fill="#fff9ed" stroke="#d5c8b8" stroke-width="1.5" stroke-linejoin="round" d="M109 39C133 30 150 44 150 66C150 88 133 101 108 94L107 80C122 85 136 80 136 65C136 52 124 47 108 53Z"/>
               <circle cx="67" cy="65" r="53" fill="#d6dfea"/>
               <circle cx="65" cy="61" r="50" fill="#fff9ed"/>
               <circle cx="65" cy="61" r="40" fill="#673d2b"/>
