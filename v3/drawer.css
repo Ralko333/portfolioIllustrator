@@ -123,7 +123,7 @@ body { background: var(--paper); color: var(--ink); }
 .prop-poster { width: clamp(112px, 11vw, 184px); left: calc(var(--cabinet-hidden) - 32px); top: 26%; transform: rotate(11deg); }
 .prop-calendar { width: clamp(95px, 9.5vw, 156px); left: calc(var(--cabinet-hidden) - 25px); top: 66%; transform: rotate(-9deg); }
 .prop-coffee { width: clamp(98px, 10vw, 166px); left: calc(var(--cabinet-hidden) - 85px); top: 9%; }
-.prop-gamepad { --gamepad-width: calc(clamp(98px, 10vw, 166px) * 1.5); width: var(--gamepad-width); left: auto; right: calc(12px + var(--gamepad-width) * .09); top: 45%; transform: rotate(-16deg); filter: none; z-index: 4; }
+.prop-gamepad { --gamepad-width: calc(clamp(98px, 10vw, 166px) * 1.5); width: var(--gamepad-width); left: auto; right: calc(12px + var(--gamepad-width) * .09); top: 45%; transform: rotate(-16deg); filter: none; overflow: visible; z-index: 4; }
 .prop-pencil { width: clamp(120px, 12vw, 194px); left: calc(var(--cabinet-hidden) - 67px); top: 85%; }
 .prop-eraser { width: clamp(43px, 4vw, 65px); left: auto; right: clamp(15px, 1.5vw, 26px); top: clamp(63px, 8vw, 98px); transform: rotate(13deg); }
 .prop-paperclip { width: clamp(16px, 1.25vw, 21px); left: auto; right: clamp(10px, 1.15vw, 18px); top: clamp(8px, 1.25vw, 16px); transform: rotate(-12deg); }

@@ -10,7 +10,7 @@
   <link rel="preload" href="../assets/fonts/manrope-medium.woff" as="font" type="font/woff" crossorigin>
   <link rel="stylesheet" href="styles.css?v=20261108-folders-9">
   <link rel="stylesheet" href="folders.css?v=20261108-folders-9">
-  <link rel="stylesheet" href="drawer.css?v=20261108-props-13">
+  <link rel="stylesheet" href="drawer.css?v=20261108-gamepad-shadow-14">
 </head>
 <body>
   <a class="skip-link" href="#work">К работам</a>
@@ -83,11 +83,18 @@
               <g fill="#f2cb8c"><circle cx="86" cy="39" r="4"/><circle cx="91" cy="50" r="3"/><circle cx="92" cy="62" r="5"/><circle cx="89" cy="75" r="4"/><circle cx="82" cy="85" r="3"/></g>
             </svg>
             <svg class="cabinet-prop prop-gamepad" viewBox="0 0 190 125" focusable="false">
+              <defs>
+                <filter id="gamepad-contour-shadow" x="-30%" y="-40%" width="170%" height="190%" color-interpolation-filters="sRGB">
+                  <feDropShadow dx="5" dy="7" stdDeviation="2.8" flood-color="#284c6b" flood-opacity=".48"/>
+                </filter>
+              </defs>
+              <g filter="url(#gamepad-contour-shadow)">
               <path fill="#fff9ee" stroke="#365f88" stroke-width="1.8" stroke-linejoin="round" d="M30 10C45 0 61 14 77 14H113C131 2 151 7 159 29L181 90C188 115 164 123 146 104L123 84H70L45 106C25 122 2 108 8 87L23 29Z"/>
               <path fill="#365f88" d="M43 28H54V40H66V51H54V63H43V51H31V40H43Z"/>
               <g fill="#d7755a"><circle cx="135" cy="28" r="7"/><circle cx="149" cy="42" r="7"/><circle cx="121" cy="42" r="7"/><circle cx="135" cy="56" r="7"/></g>
               <g fill="#365f88"><circle cx="72" cy="69" r="13"/><circle cx="109" cy="69" r="13"/></g>
               <path stroke="#e5cdb6" stroke-width="4" stroke-linecap="round" d="M83 43H96"/>
+              </g>
             </svg>
             <svg class="cabinet-prop prop-pencil" viewBox="0 0 220 36" focusable="false">
               <path fill="#284c6b" d="M9 11H180L219 27L180 35H10Z"/>
