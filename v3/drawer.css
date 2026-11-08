@@ -6,13 +6,15 @@
   --blue: #6082a8;
   --orange: #d7755a;
   --folder-surface: url('folder-paper.svg?v=20261108-neutral-1') center / cover no-repeat #f1e8da;
-  --folder-number-size: clamp(15px, 1.45vw, 24px);
+  --folder-tab: clamp(26px, 2vw, 32px);
+  --folder-caption: clamp(49px, 6.8svh, 68px);
+  --folder-number-size: clamp(13px, 1.2vw, 20px);
   --folder-content-inset: clamp(8px, .65vw, 10px);
-  --folder-stripe: calc(var(--folder-number-size) * 1.25 + var(--folder-content-inset) * 2);
+  --folder-stripe: calc(var(--folder-number-size) * 1.35 + 12px);
   --folder-accent-offset: clamp(8px, .65vw, 14px);
   --folder-text-inset: calc(var(--folder-accent-offset) + var(--folder-content-inset));
-  --folder-band: linear-gradient(#fff, #fff) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, linear-gradient(105deg, #e49277, #d7755a);
-  --folder-caption-band: linear-gradient(#fff, #fff) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, linear-gradient(105deg, #6e90b2, #6082a8);
+  --folder-band: linear-gradient(#fff, #fff) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, linear-gradient(105deg, #cf9582, #bd8170);
+  --folder-caption-band: linear-gradient(#fff, #fff) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, linear-gradient(105deg, #a0b5c3, #829eb1);
   color-scheme: light;
   background: var(--paper);
 }
@@ -123,7 +125,8 @@ body { background: var(--paper); color: var(--ink); }
 
 /* The existing accordion keeps its order, widths, artwork and layer order. */
 .drawer-interior .folder-shelf { width: 100%; height: 100%; margin: 0; padding: 0; }
-.drawer-interior .folder.project { height: 100%; background: #436b90; border-color: #486e90; border-bottom-color: #294b6b; }
+.drawer-interior .folder.project { height: 100%; background: #718a9a; border-color: #8299a8; border-bottom-color: #46657a; }
+.drawer-interior .folder.is-active { --folder-caption: clamp(64px, 8svh, 78px); }
 .drawer-interior .folder.is-active { transform: none; }
 .drawer-interior .folder.is-active::before { display: none; }
 .drawer-interior .folder-number {
@@ -134,9 +137,9 @@ body { background: var(--paper); color: var(--ink); }
   height: var(--folder-tab);
   padding: 0 var(--folder-text-inset);
   background: var(--folder-band);
-  color: #132636;
+  color: #233b50;
   border: 0;
-  border-bottom: 1px solid #b9664e;
+  border-bottom: 1px solid #a57566;
   font-size: var(--folder-number-size);
   text-align: left;
   line-height: 1;
@@ -145,10 +148,10 @@ body { background: var(--paper); color: var(--ink); }
 
 .drawer-interior .is-active .folder-number { background: var(--folder-band); }
 .drawer-interior .folder .project-art { inset: var(--folder-tab) 0 var(--folder-caption); width: auto; z-index: 0; }
-.drawer-interior .folder-meta { left: 0; padding: 12px calc(var(--folder-content-inset) + var(--under-next)) 10px var(--folder-text-inset); background: var(--folder-caption-band); border: 0; border-top: 1px solid #6489a8; color: #08151f; z-index: 4; }
-.drawer-interior .is-active .folder-meta { padding-left: var(--folder-text-inset); padding-right: calc(var(--folder-content-inset) + var(--under-next)); }
-.drawer-interior .folder-title { font-size: clamp(11px, 1.08vw, 20px); }
-.drawer-interior .is-active .folder-title { font-size: clamp(22px, 2.05vw, 38px); }
+.drawer-interior .folder-meta { left: 0; padding: 7px calc(var(--folder-content-inset) + var(--under-next)) 6px var(--folder-text-inset); background: var(--folder-caption-band); border: 0; border-top: 1px solid #7c9bb0; color: #203748; z-index: 4; }
+.drawer-interior .is-active .folder-meta { padding: 8px calc(var(--folder-content-inset) + var(--under-next)) 7px var(--folder-text-inset); }
+.drawer-interior .folder-title { font-size: clamp(11px, 1vw, 17px); }
+.drawer-interior .is-active .folder-title { font-size: clamp(19px, 1.7vw, 29px); line-height: 1.12; }
 .drawer-interior .folder-trigger::after { display: none; }
 .drawer-interior .folder.is-active .art-bank { gap: clamp(12px, 1.2vw, 20px); padding: 12px; }
 .drawer-interior .folder.is-active .art-sailor {
@@ -180,11 +183,11 @@ body { background: var(--paper); color: var(--ink); }
 @media (max-width: 1000px) and (min-width: 701px) {
   :root { --folder-number-size: 14px; --folder-content-inset: 8px; }
   .drawer-interior .folder-title { font-size: 10px; overflow-wrap: anywhere; }
-  .drawer-interior .is-active .folder-title { font-size: 21px; overflow-wrap: normal; }
+  .drawer-interior .is-active .folder-title { font-size: 19px; overflow-wrap: normal; }
 }
 
 @media (max-width: 700px) {
-  :root { --folder-number-size: 12px; --folder-content-inset: 8px; }
+  :root { --folder-tab: 22px; --folder-caption: 33px; --folder-number-size: 12px; --folder-content-inset: 8px; }
   .drawer-scene {
     --cabinet-peek: clamp(198px, 65vw, 380px);
     --front-size: 31px;
@@ -229,14 +232,15 @@ body { background: var(--paper); color: var(--ink); }
   .prop-paperclip { width: 23px; left: auto; right: 13%; top: 13%; }
   .drawer-interior .folder-shelf { width: 100%; height: auto; margin: 0; padding: 0; }
   .drawer-interior .folder.project { height: calc(clamp(112px, 15.2svh, 145px) + var(--under-next)); }
-  .drawer-interior .folder.is-active { height: calc(clamp(350px, 65svh, 530px) + var(--under-next)); }
+  .drawer-interior .folder.is-active { --folder-caption: 76px; height: calc(clamp(350px, 65svh, 530px) + var(--under-next)); }
   .drawer-interior .folder .project-art { inset: var(--folder-tab) 0 calc(var(--folder-caption) + var(--under-next)); }
-  .drawer-interior .folder.is-active .project-art { bottom: calc(91px + var(--under-next)); }
+  .drawer-interior .folder.is-active .project-art { bottom: calc(var(--folder-caption) + var(--under-next)); }
   .drawer-interior .folder:not(.is-active) .art-sailor { gap: 10px; padding: 5px; }
-  .drawer-interior .folder-meta { left: 0; padding: 8px var(--folder-content-inset) calc(8px + var(--under-next)) var(--folder-text-inset); }
-  .drawer-interior .is-active .folder-meta { padding: 12px var(--folder-content-inset) calc(12px + var(--under-next)) var(--folder-text-inset); }
+  .drawer-interior .folder-meta { left: 0; padding: 4px var(--folder-content-inset) calc(4px + var(--under-next)) var(--folder-text-inset); }
+  .drawer-interior .is-active .folder-meta { height: calc(var(--folder-caption) + var(--under-next)); padding: 5px var(--folder-content-inset) calc(5px + var(--under-next)) var(--folder-text-inset); }
   .drawer-interior .folder-title { font-size: 14px; }
-  .drawer-interior .is-active .folder-title { font-size: 22px; }
+  .drawer-interior .is-active .folder-title { font-size: clamp(17px, 4.8vw, 20px); line-height: 1.1; }
+  .drawer-interior .is-active .folder-hint { font-size: 10px; padding: 3px 8px; margin-top: 4px; line-height: 1.1; }
   .drawer-interior .is-active .folder-hint { border-color: #c9957d; background: #6082a8; color: #fff7ec; }
   .shelf-bottom { padding-top: 12px; }
   .contacts { padding-bottom: 36px; }
