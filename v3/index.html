@@ -1,165 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f9f4ec">
-  <meta name="description" content="Сергей Белик — коммерческий векторный иллюстратор. Иллюстрации для J’PAN, личные проекты и графический дизайн.">
-  <title>Сергей Белик — иллюстрация и графический дизайн</title>
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="../assets/fonts/manrope-medium.woff" as="font" type="font/woff" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20261108-folders-9">
-  <link rel="stylesheet" href="folders.css?v=20261108-folders-9">
-  <link rel="stylesheet" href="drawer.css?v=20261108-restore-mobile-cabinet-14">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#eaf2fb" name="theme-color"/>
+<meta content="Сергей Белик — коммерческий векторный иллюстратор. Проекты для J’PAN в 2022–2025: меню, интерьер, мерч и коллаборации. Личные сюжетные иллюстрации." name="description"/>
+<title>Сергей Белик — коммерческая векторная иллюстрация</title>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/fonts/manrope-medium.woff" rel="preload" as="font" type="font/woff" crossorigin="anonymous"/>
+<link href="../styles.css?v=20261106-layout-mobile-1" rel="stylesheet"/>
+<link href="../backgrounds.css?v=20261107-case-backgrounds-2" rel="stylesheet"/>
+<script defer="" src="../content.js?v=20261106-layout-mobile-1"></script>
+<script defer src="legacy-asset-paths.js?v=20261108-route-swap-1"></script>
+<script defer src="legacy-text-content.js?v=20261106-layout-mobile-1"></script>
+<script defer="" src="../script.js?v=20261107-case-backgrounds-2"></script>
 </head>
 <body>
-  <a class="skip-link" href="#work">К работам</a>
-  <header class="site-header wrap">
-    <a class="brand" href="#" aria-label="Сергей Белик — на главную">
-      <svg class="brand-mark" viewBox="392 284 468 674" aria-hidden="true">
-        <path d="M647 484 C680 466 721 442 720 403 C722 365 698 332 650 330 L598 330 C537 330 492 367 493 425 C494 473 532 502 598 531 C705 576 804 629 804 725 C804 809 730 867 645 867 C555 867 509 805 509 737 L509 601" fill="none" stroke="#6082A8" stroke-width="41" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="brand-corner" pathLength="1" d="M443 838 L443 874 C443 895 457 909 479 909 L511 909" fill="none" stroke="#D7755A" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span>Сергей Белик</span>
-    </a>
-    <nav class="desktop-nav" aria-label="Основная навигация">
-      <a href="#work" data-copy-ui="navWork">Работы</a>
-      <a href="#about" data-copy-ui="navAbout">Обо мне</a>
-    </nav>
-    <details class="mobile-nav">
-      <summary>Меню</summary>
-      <nav aria-label="Мобильная навигация">
-        <a href="#work">Работы</a><a href="#about">Обо мне</a>
-      </nav>
-    </details>
-  </header>
-  <main id="home-view">
-    <section class="hero exhibition-heading wrap" aria-labelledby="hero-title">
-      <h1 id="hero-title" data-copy="heading">Векторный иллюстратор</h1>
-      <h2 id="work-title" data-copy="worksTitle">Мои работы</h2>
-    </section>
-    <section class="work exhibition" id="work" aria-labelledby="work-title">
-      <p id="folder-instruction" class="sr-only">Выберите проект</p>
-      <p id="drawer-instruction" class="sr-only">Потяните ручку вправо или нажмите её, чтобы открыть ящик с проектами.</p>
-      <div class="drawer-scene" id="portfolio-drawer" data-state="closed">
-        <div class="drawer-tray" id="drawer-tray">
-          <div class="drawer-interior" id="drawer-interior" inert aria-hidden="true">
-            <div class="folder-shelf" id="project-grid" aria-busy="true" role="group" aria-labelledby="work-title"></div>
-          </div>
-          <div class="drawer-front">
-            <button class="drawer-handle" id="drawer-handle" type="button" aria-label="Открыть ящик с проектами" aria-expanded="false" aria-controls="drawer-interior" aria-describedby="drawer-instruction">
-              <span class="drawer-cue" aria-hidden="true"><img src="assets/pull-note.png" alt="" width="1774" height="887" draggable="false"></span>
-            </button>
-          </div>
-        </div>
-        <div class="drawer-cabinet" aria-hidden="true">
-          <div class="cabinet-top">
-            <svg class="cabinet-prop prop-poster" viewBox="0 0 150 190" focusable="false" aria-hidden="true">
-              <rect x="7" y="9" width="137" height="176" rx="2" fill="#284c6b" opacity=".88"/>
-              <rect x="2" y="2" width="137" height="176" rx="2" fill="#fff7e9"/>
-              <path d="M16 18H125V113H16Z" fill="#a4bdcf"/>
-              <path d="M16 113L125 18V113Z" fill="#e09c7e"/>
-              <circle cx="72" cy="66" r="31" fill="#fff4df"/>
-              <path d="M51 75C63 42 84 40 96 73" fill="none" stroke="#365e82" stroke-width="9" stroke-linecap="round"/>
-              <path d="M17 132H99M17 144H118M17 156H68" stroke="#365e82" stroke-width="5" stroke-linecap="round"/>
-              <path d="M110 132H124V156H81" fill="none" stroke="#d7755a" stroke-width="5"/>
-            </svg>
-            <svg class="cabinet-prop prop-calendar" viewBox="0 0 158 154" focusable="false" aria-hidden="true">
-              <rect x="7" y="13" width="149" height="140" rx="5" fill="#284c6b" opacity=".88"/>
-              <rect x="2" y="6" width="149" height="140" rx="5" fill="#fff9ed"/>
-              <path d="M2 12Q2 6 9 6H144Q151 6 151 12V37H2Z" fill="#d7755a"/>
-              <g fill="none" stroke="#294b6b" stroke-width="4" stroke-linecap="round"><path d="M26 2V19M76 2V19M126 2V19"/></g>
-              <g fill="#a6bbcc"><rect x="17" y="49" width="20" height="15" rx="2"/><rect x="45" y="49" width="20" height="15" rx="2"/><rect x="73" y="49" width="20" height="15" rx="2"/><rect x="101" y="49" width="20" height="15" rx="2"/><rect x="17" y="73" width="20" height="15" rx="2"/><rect x="45" y="73" width="20" height="15" rx="2"/><rect x="73" y="73" width="20" height="15" rx="2"/><rect x="101" y="73" width="20" height="15" rx="2"/><rect x="17" y="97" width="20" height="15" rx="2"/><rect x="45" y="97" width="20" height="15" rx="2"/><rect x="73" y="97" width="20" height="15" rx="2"/><rect x="101" y="97" width="20" height="15" rx="2"/></g>
-              <circle cx="83" cy="104" r="15" fill="none" stroke="#d7755a" stroke-width="4"/>
-              <path d="M18 129H80" stroke="#6082a8" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-            <svg class="cabinet-prop prop-coffee" viewBox="0 0 150 150" focusable="false" style="overflow:visible">
-              <!-- Compact solid top-down coffee cup handle, separate from the drawer handle. -->
-              <g fill="#284c6b" opacity=".88" transform="translate(5 7)">
-                <circle cx="67" cy="65" r="53"/>
-                <path d="M108 54 L125 54 Q134 54 134 62 L134 67 Q134 75 125 75 L108 75 Z"/>
-              </g>
-              <path fill="#fff9ed" stroke="#d5c8b8" stroke-width="1.3" stroke-linejoin="round" d="M108 54 L125 54 Q134 54 134 62 L134 67 Q134 75 125 75 L108 75 Z"/>
-              <circle cx="67" cy="65" r="53" fill="#d6dfea"/>
-              <circle cx="65" cy="61" r="50" fill="#fff9ed"/>
-              <circle cx="65" cy="61" r="40" fill="#673d2b"/>
-              <path fill="#a76b3e" d="M80 24A40 40 0 0 1 88 92L77 91C93 70 93 45 80 24Z"/>
-              <g fill="#f2cb8c"><circle cx="86" cy="39" r="4"/><circle cx="91" cy="50" r="3"/><circle cx="92" cy="62" r="5"/><circle cx="89" cy="75" r="4"/><circle cx="82" cy="85" r="3"/></g>
-            </svg>
-            <svg class="cabinet-prop prop-gamepad" viewBox="0 0 190 125" focusable="false">
-              <path fill="#284c6b" opacity=".88" transform="translate(5 7)" d="M30 10C45 0 61 14 77 14H113C131 2 151 7 159 29L181 90C188 115 164 123 146 104L123 84H70L45 106C25 122 2 108 8 87L23 29Z"/>
-              <path fill="#fff9ee" stroke="#365f88" stroke-width="1.8" stroke-linejoin="round" d="M30 10C45 0 61 14 77 14H113C131 2 151 7 159 29L181 90C188 115 164 123 146 104L123 84H70L45 106C25 122 2 108 8 87L23 29Z"/>
-              <path fill="#365f88" d="M43 28H54V40H66V51H54V63H43V51H31V40H43Z"/>
-              <g fill="#d7755a"><circle cx="135" cy="28" r="7"/><circle cx="149" cy="42" r="7"/><circle cx="121" cy="42" r="7"/><circle cx="135" cy="56" r="7"/></g>
-              <g fill="#365f88"><circle cx="72" cy="69" r="13"/><circle cx="109" cy="69" r="13"/></g>
-              <path stroke="#e5cdb6" stroke-width="4" stroke-linecap="round" d="M83 43H96"/>
-            </svg>
-            <svg class="cabinet-prop prop-pencil" viewBox="0 0 220 36" focusable="false">
-              <path fill="#284c6b" opacity=".88" transform="translate(5 7)" d="M8 3H175L213 14L175 25H8Q0 25 0 17V11Q0 3 8 3Z"/>
-              <path fill="#d7755a" d="M8 3H175V25H8Q0 25 0 17V11Q0 3 8 3Z"/>
-              <path fill="#efac8f" d="M8 3H175V10H0Q0 3 8 3Z"/>
-              <path fill="#fff0d6" d="M175 3L213 14L175 25Z"/>
-              <path fill="#294d6b" d="M199 10L213 14L199 18Z"/>
-              <path fill="#fff7e7" d="M19 3H28V25H19Z"/>
-            </svg>
-            <svg class="cabinet-prop prop-eraser" viewBox="0 0 80 40" focusable="false">
-              <rect x="7" y="10" width="69" height="27" rx="4" fill="#284c6b" opacity=".88"/>
-              <rect x="2" y="3" width="69" height="27" rx="4" fill="#fff7e7"/>
-              <path fill="#d7755a" d="M6 3H30V30H6Q2 30 2 26V7Q2 3 6 3Z"/>
-              <path fill="#efac8f" d="M6 3H30V9H2V7Q2 3 6 3Z"/>
-              <path fill="#e3d9c7" d="M30 24H71V26Q71 30 67 30H30Z"/>
-            </svg>
-            <svg class="cabinet-prop prop-paperclip" viewBox="0 0 40 90" focusable="false">
-              <path d="M8 21V59C8 81 33 81 33 59V16C33 -3 3 -3 3 16V56C3 68 21 68 21 56V21" transform="translate(5 7)" fill="none" stroke="#284c6b" stroke-width="5" stroke-linecap="round" opacity=".88"/>
-              <path d="M8 21V59C8 81 33 81 33 59V16C33 -3 3 -3 3 16V56C3 68 21 68 21 56V21" fill="none" stroke="#fff0d7" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="shelf-bottom wrap"><p class="shelf-counter"><span id="folder-current">01</span><span class="muted"> / 09</span></p><span class="shelf-rule" aria-hidden="true"></span></div>
-      <noscript><p>Для просмотра портфолио включите JavaScript.</p></noscript>
-    </section>
-    <section class="about wrap" id="about" aria-labelledby="about-title">
-      <div><p class="eyebrow" data-copy="aboutEyebrow">Сергей Белик / Коммерческий иллюстратор</p><h2 id="about-title" data-copy="aboutTitle">Обо мне</h2></div>
-      <div class="about-copy"><p class="about-lead" data-copy="introExtra"></p><p data-copy="aboutIntro"></p><p data-copy="aboutExtra"></p><p data-copy="about3d"></p></div>
-    </section>
-    <section class="contacts wrap" aria-labelledby="contacts-title">
-      <h2 id="contacts-title">Связаться со мной:</h2>
-      <div class="contact-links">
-        <a href="https://t.me/Enotosobaka" target="_blank" rel="noopener noreferrer">
-          <svg class="contact-icon contact-icon-telegram" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-            <path fill="#294b6b" d="M6 23L43 9L35 43L24 33L17 39L18 28Z"/>
-            <path fill="#fff9ee" d="M4 19L41 5L33 39L22 29L15 35L16 24Z"/>
-            <path fill="#6082a8" d="M16 24L34 12L22 29L15 35Z"/>
-            <path fill="#d7755a" d="M16 24L15 35L22 29Z"/>
-          </svg>
-          <span>Телеграмм: @Enotosobaka</span>
-        </a>
-        <a href="mailto:bekaron3@gmail.com">
-          <svg class="contact-icon contact-icon-mail" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-            <rect x="6" y="15" width="36" height="26" rx="3" fill="#294b6b"/>
-            <rect x="4" y="11" width="36" height="26" rx="3" fill="#fff9ee"/>
-            <path fill="#6082a8" d="M4 34L18 23H26L40 34V34Q40 37 37 37H7Q4 37 4 34Z"/>
-            <path fill="#d7755a" d="M4 14Q4 11 7 11H37Q40 11 40 14L24 26Q22 28 20 26Z"/>
-            <path fill="#efac8f" d="M7 11H37L22 23Z"/>
-          </svg>
-          <span>Почта: bekaron3@gmail.com</span>
-        </a>
-      </div>
-    </section>
-  </main>
-  <main id="case-view" class="case wrap" hidden tabindex="-1"></main>
-  <footer class="site-footer wrap">
-    <div><p data-copy="footerName">Сергей Белик</p><p class="muted" data-copy="footerRole">Коммерческий векторный иллюстратор</p></div>
-    <div class="footer-links"><a href="#work">К работам</a><a href="#">Наверх ↑</a></div>
-  </footer>
-  <p class="sr-only" id="announcement" aria-live="polite"></p>
-  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
-    <div class="lightbox-toolbar"><button type="button" data-zoom aria-pressed="false">Увеличить</button><a data-original target="_blank" rel="noopener noreferrer">Открыть изображение ↗</a><button type="button" data-close autofocus>Закрыть</button></div>
-    <div class="lightbox-stage"><img alt=""></div>
-    <div class="lightbox-bottom"><button type="button" data-previous>Назад</button><p id="lightbox-caption"></p><button type="button" data-next>Далее</button></div>
-  </dialog>
-  <script src="../content.js"></script>
-  <script src="app.js?v=20261108-drawer-4" type="module"></script>
+<div id="sergey-portfolio-concept">
+<header class="sp-header">
+<button aria-label="Белик Сергей — на главную" class="sp-brand cursor-interaction" data-home="" type="button"><img aria-hidden="true" class="sp-brand-mark" src="../assets/sb-ribbon.svg?v=20261008-blue-orange-3" alt="" width="32" height="32"/> <span data-text="home.brandName">Белик Сергей</span></button>
+<nav aria-label="Навигация портфолио" class="sp-nav"><button class="cursor-interaction" data-jump="sp-work" type="button" data-text="ui.navWork">Работы</button></nav>
+</header>
+<main class="sp-home">
+<section class="sp-intro" id="sp-about">
+<div><h1 data-text="home.heading">Векторный иллюстратор</h1></div>
+<div class="sp-intro-copy"><p data-text="home.intro">Рисую персонажей и сюжетные сцены в стиле флэт.</p><p data-text="home.introExtra">Здесь собраны мои проекты для сети ресторанов J’PAN за 2022–2025 годы, личные иллюстрации и примеры графического дизайна.</p><p data-text="home.aboutIntro">В проектах для J’PAN работал с маскотом сиба-ину: придумывал для него истории, рисовал сезонные обложки, стикеры и принты. Могу разработать сюжет по короткому брифу или работать с темой и референсами заказчика.</p><p data-text="home.aboutExtra">Работаю в Adobe Illustrator, готовлю файлы к печати. Также занимаюсь вёрсткой.</p><p data-text="home.about3d">Дополнительно работаю с 3D. Создавал модели, которые печатали и использовали для изготовления форм для десертов.</p></div>
+</section>
+
+<section class="sp-section" id="sp-work">
+<div class="sp-section-head"><h2 data-text="home.worksTitle">Мои работы</h2><span class="sp-label" data-text="home.worksLabel">Коммерческие и личные проекты</span></div>
+<div class="sp-grid">
+
+<button aria-label="Открыть проект: Сезонные меню J’PAN" class="sp-project cursor-interaction" data-project="menus" type="button"><span class="sp-project-art sp-menus"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img alt="Зимняя обложка J’PAN" data-asset="winterFront" decoding="async" height="3600" loading="lazy" src="../assets/previews/winter25a_back.webp" width="2546"/><img alt="Весенняя обложка Ханами" data-asset="springFront" decoding="async" height="3600" loading="lazy" src="../assets/previews/hanami_front.webp" width="2546"/></span><span class="sp-project-meta"><span><span class="sp-project-title">Сезонные меню</span><span class="sp-project-label">J’PAN / Иллюстрации для меню</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button><button aria-label="Открыть проект: J’PAN × СберПрайм" class="sp-project cursor-interaction" data-project="bank" type="button"><span class="sp-project-art sp-bank"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img alt="Банковская карта с ночной улицей" data-asset="bankNight" decoding="async" height="2270" loading="lazy" src="../assets/previews/sber-night-final.webp" width="3600"/><img alt="Банковская карта с садом и сакурой" data-asset="bankSpring" decoding="async" height="2270" loading="lazy" src="../assets/previews/sber-sakura-final.webp" width="3600"/></span><span class="sp-project-meta"><span><span class="sp-project-title">J’PAN × СберПрайм</span><span class="sp-project-label">Лимитированные банковские карты</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button><button aria-label="Открыть проект: Графический дизайн" class="sp-project cursor-interaction" data-project="design" type="button"><span class="sp-project-art sp-design"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img src="../assets/previews/menu-layout-1.webp" alt="Вёрстка зимнего меню J’PAN" data-asset="restored43" width="1280" height="1800" loading="lazy" decoding="async"/><img src="../assets/previews/vlavashe-a6-front.webp" alt="Буклет А6 для промоутеров Влаваше" data-asset="vlavasheFront" width="1241" height="1749" loading="lazy" decoding="async"/><img src="../assets/spaffy-instagram.webp" alt="Макет для карусели Instagram Spaffy" data-asset="spaffyPost" width="1080" height="1350" loading="lazy" decoding="async"/></span><span class="sp-project-meta"><span><span class="sp-project-title">Графический дизайн</span><span class="sp-project-label">Вёрстка и типографика</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button><button aria-label="Открыть проект: Интерьерное панно" class="sp-project cursor-interaction" data-project="panel" type="button"><span class="sp-project-art sp-panel"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img alt="Иллюстрация для интерьерного панно J’PAN" data-asset="panel" decoding="async" height="412" loading="lazy" src="../assets/previews/panel-source-hi.webp" width="900"/></span><span class="sp-project-meta"><span><span class="sp-project-title">Интерьерное панно</span><span class="sp-project-label">J’PAN / Интерьерное панно</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button><button aria-label="Открыть проект: Ханами — фестивальный мерч" class="sp-project cursor-interaction" data-project="merch" type="button"><span class="sp-project-art sp-merch"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img alt="Первый принт Ханами" data-asset="merchOne" decoding="async" height="1338" loading="lazy" src="../assets/previews/hanami-print-1-cropped.webp" width="900"/><img alt="Второй принт Ханами" data-asset="merchTwo" decoding="async" height="1165" loading="lazy" src="../assets/previews/hanami-print-2-cropped.webp" width="900"/></span><span class="sp-project-meta"><span><span class="sp-project-title">Ханами</span><span class="sp-project-label">J’PAN / Фестивальный мерч</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button><button aria-label="Открыть проект: Стикеры" class="sp-project cursor-interaction" data-project="stickers" type="button"><span class="sp-project-art sp-stickers"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img alt="Осенний стикер J’PAN" data-asset="stickerOne" decoding="async" height="2000" loading="lazy" src="../assets/previews/autumn-sticker-1.webp" width="2000"/><img alt="Второй осенний стикер J’PAN" data-asset="stickerTwo" decoding="async" height="2000" loading="lazy" src="../assets/previews/autumn-sticker-2.webp" width="2000"/><img alt="Третий осенний стикер J’PAN" data-asset="stickerThree" decoding="async" height="2000" loading="lazy" src="../assets/previews/autumn-sticker-3.webp" width="2000"/></span><span class="sp-project-meta"><span><span class="sp-project-title">Стикеры</span><span class="sp-project-label">J’PAN / Сезонные стикеры</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button><button aria-label="Открыть проект: Кухни мира" class="sp-project cursor-interaction" data-project="series" type="button"><span class="sp-project-art sp-series"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img alt="Первая иллюстрация серии Кухни мира" data-asset="worldOne" decoding="async" height="2400" loading="lazy" src="../assets/previews/world-cuisines-1.webp" width="1800"/><img alt="Вторая иллюстрация серии Кухни мира" data-asset="worldTwo" decoding="async" height="2400" loading="lazy" src="../assets/previews/world-cuisines-2.webp" width="1800"/><img alt="Третья иллюстрация серии Кухни мира" data-asset="worldThree" decoding="async" height="2400" loading="lazy" src="../assets/previews/world-cuisines-3.webp" width="1800"/></span><span class="sp-project-meta"><span><span class="sp-project-title">Кухни мира</span><span class="sp-project-label">J’PAN / Иллюстрации в виде марок</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button><button aria-label="Открыть проект: Сэйлор Мун" class="sp-project cursor-interaction" data-project="sailor" type="button"><span class="sp-project-art sp-sailor"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img alt="Сэйлор Мун — первая иллюстрация" data-asset="restored63" decoding="async" height="2600" loading="lazy" src="../assets/previews/sailor-moon-1.webp" width="1625"/><img alt="Сэйлор Мун — вторая иллюстрация" data-asset="restored64" decoding="async" height="2600" loading="lazy" src="../assets/previews/sailor-moon-2.webp" width="1625"/></span><span class="sp-project-meta"><span><span class="sp-project-title">Сэйлор Мун</span><span class="sp-project-label">J’PAN / Серия иллюстраций</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button><button aria-label="Открыть проект: Другие работы" class="sp-project cursor-interaction" data-project="selected" type="button"><span class="sp-project-art sp-selected"><svg class="sp-project-corner" viewBox="423 818 108 111" aria-hidden="true" focusable="false"><path d="M443 838 L443 874 C443 895 457 909 479 909 L511 909"/></svg><img alt="Книжный магазин: девушка, кот и корги среди бумажных волн и оживших книг" data-asset="imaginationFlood" decoding="async" height="1132" loading="lazy" src="../assets/previews/imagination-flood.webp" width="1600"/></span><span class="sp-project-meta"><span><span class="sp-project-title">Другие работы</span><span class="sp-project-label">Личные и коммерческие иллюстрации</span></span><span aria-hidden="true" class="sp-arrow">Открыть проект ↗</span></span></button></div>
+</section>
+
+
+</main>
+<section aria-label="Страница проекта" class="sp-case" hidden="">
+<button aria-label="Назад ко всем работам" class="sp-case-back cursor-interaction" data-return="" type="button"><span aria-hidden="true">←</span> <span data-text="ui.back">Назад</span></button>
+<div class="sp-case-head"><div><p class="sp-label" data-case-label=""></p><h2 data-case-title=""></h2></div><p data-case-description=""></p></div>
+<nav class="sp-case-related" aria-label="Связанные работы" hidden></nav>
+<nav aria-label="Разделы проекта" class="sp-case-nav" hidden=""></nav>
+<div class="sp-case-divider" aria-hidden="true"></div>
+<div class="sp-case-gallery"></div>
+<div aria-label="Публикации проекта" class="sp-case-publications" hidden=""></div>
+</section>
+
+<span aria-live="polite" class="sr-only" data-announcement=""></span>
+<div class="sp-project-transition" role="status" tabindex="-1" aria-label="Открываем проект" hidden>
+<svg class="sp-transition-logo" viewBox="403 244 480 700" aria-hidden="true" focusable="false">
+<path class="sp-transition-blue" d="M647 484 C680 466 721 442 720 403 C722 365 698 332 650 330 L598 330 C537 330 492 367 493 425 C494 473 532 502 598 531 C705 576 804 629 804 725 C804 809 730 867 645 867 C555 867 509 805 509 737 L509 601"/>
+<!-- Starts with the existing orange corner and travels once around the logo. -->
+<path class="sp-transition-orbit" pathLength="100" d="M443 838 L443 874 C443 895 457 909 479 909 L807 909 C831 909 850 890 850 866 L850 313 C850 289 831 270 807 270 L486 270 C462 270 443 289 443 313 L443 838 Z"/>
+</svg>
+</div>
+<dialog aria-labelledby="sp-lightbox-caption" class="sp-lightbox">
+<div class="sp-lightbox-toolbar"><button aria-pressed="false" data-image-zoom="" type="button">Увеличить</button><a data-image-original="" rel="noopener noreferrer" target="_blank">Открыть изображение ↗</a><button aria-label="Закрыть просмотр" autofocus="" data-image-close="" type="button">Закрыть ×</button></div>
+<div class="sp-lightbox-stage"><img alt=""/></div>
+<div class="sp-lightbox-bottom"><button aria-label="Предыдущее изображение" data-image-previous="" type="button">←</button><p id="sp-lightbox-caption"></p><button aria-label="Следующее изображение" data-image-next="" type="button">→</button></div>
+</dialog></div>
 </body>
 </html>
