@@ -61,7 +61,6 @@ export function createDrawer({ verticalShelf, reduced }) {
     }
     scene.classList.remove('is-dragging');
     instruction.textContent = `Потяните ручку ${verticalShelf.matches ? 'вниз' : 'вправо'} или нажмите её, чтобы открыть ящик с проектами.`;
-    handle.querySelector('.drawer-cue').textContent = verticalShelf.matches ? '↓' : '→';
     measure();
     settle(progress >= .5, true, false);
   }
