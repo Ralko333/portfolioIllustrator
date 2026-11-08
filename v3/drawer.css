@@ -125,7 +125,7 @@ body { background: var(--paper); color: var(--ink); }
 .prop-coffee { width: clamp(98px, 10vw, 166px); left: calc(var(--cabinet-hidden) - 85px); top: 9%; }
 .prop-gamepad { --gamepad-width: calc(clamp(98px, 10vw, 166px) * 1.5); width: var(--gamepad-width); left: auto; right: calc(12px + var(--gamepad-width) * .09); top: 45%; transform: rotate(-16deg); filter: none; overflow: visible; z-index: 4; }
 .prop-pencil { width: clamp(120px, 12vw, 194px); left: calc(var(--cabinet-hidden) - 67px); top: 85%; }
-.prop-eraser { width: clamp(43px, 4vw, 65px); left: auto; right: clamp(45px, 4.5vw, 70px); top: clamp(16px, 2.1vw, 30px); transform: rotate(-12deg); }
+.prop-eraser { width: clamp(43px, 4vw, 65px); left: auto; right: clamp(34px, 3vw, 48px); top: clamp(10px, 1.1vw, 18px); transform: rotate(-12deg); }
 .prop-paperclip { width: clamp(16px, 1.25vw, 21px); left: auto; right: clamp(10px, 1.15vw, 18px); top: clamp(8px, 1.25vw, 16px); transform: rotate(-12deg); }
 
 /* The existing accordion keeps its order, widths, artwork and layer order. */
