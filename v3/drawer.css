@@ -5,6 +5,7 @@
   --rule: #bac9d3;
   --blue: #6082a8;
   --orange: #d7755a;
+  --folder-card-blue: #6e8eaf;
   --folder-surface: url('folder-paper.svg?v=20261108-neutral-1') center / cover no-repeat #f1e8da;
   --folder-tab: clamp(26px, 2vw, 32px);
   --folder-caption: clamp(49px, 6.8svh, 68px);
@@ -13,8 +14,8 @@
   --folder-stripe: calc(var(--folder-number-size) * 1.35 + 12px);
   --folder-accent-offset: clamp(8px, .65vw, 14px);
   --folder-text-inset: calc(var(--folder-accent-offset) + var(--folder-content-inset));
-  --folder-band: linear-gradient(#fff, #fff) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, linear-gradient(105deg, #cf9582, #bd8170);
-  --folder-caption-band: linear-gradient(#fff, #fff) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, linear-gradient(105deg, #a0b5c3, #829eb1);
+  --folder-band: linear-gradient(var(--orange), var(--orange)) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, var(--folder-card-blue);
+  --folder-caption-band: linear-gradient(var(--orange), var(--orange)) var(--folder-accent-offset) 0 / var(--folder-stripe) 100% no-repeat, var(--folder-card-blue);
   color-scheme: light;
   background: var(--paper);
 }
@@ -125,7 +126,7 @@ body { background: var(--paper); color: var(--ink); }
 
 /* The existing accordion keeps its order, widths, artwork and layer order. */
 .drawer-interior .folder-shelf { width: 100%; height: 100%; margin: 0; padding: 0; }
-.drawer-interior .folder.project { height: 100%; background: #718a9a; border-color: #8299a8; border-bottom-color: #46657a; }
+.drawer-interior .folder.project { height: 100%; background: var(--folder-card-blue); border-color: #7292aa; border-bottom-color: #46657a; }
 .drawer-interior .folder.is-active { --folder-caption: clamp(64px, 8svh, 78px); }
 .drawer-interior .folder.is-active { transform: none; }
 .drawer-interior .folder.is-active::before { display: none; }
@@ -137,7 +138,7 @@ body { background: var(--paper); color: var(--ink); }
   height: var(--folder-tab);
   padding: 0 var(--folder-text-inset);
   background: var(--folder-band);
-  color: #233b50;
+  color: #172d40;
   border: 0;
   border-bottom: 1px solid #a57566;
   font-size: var(--folder-number-size);
@@ -148,7 +149,7 @@ body { background: var(--paper); color: var(--ink); }
 
 .drawer-interior .is-active .folder-number { background: var(--folder-band); }
 .drawer-interior .folder .project-art { inset: var(--folder-tab) 0 var(--folder-caption); width: auto; z-index: 0; }
-.drawer-interior .folder-meta { left: 0; padding: 7px calc(var(--folder-content-inset) + var(--under-next)) 6px var(--folder-text-inset); background: var(--folder-caption-band); border: 0; border-top: 1px solid #7c9bb0; color: #203748; z-index: 4; }
+.drawer-interior .folder-meta { left: 0; padding: 7px calc(var(--folder-content-inset) + var(--under-next)) 6px var(--folder-text-inset); background: var(--folder-caption-band); border: 0; border-top: 1px solid #7292aa; color: #172d40; z-index: 4; }
 .drawer-interior .is-active .folder-meta { padding: 8px calc(var(--folder-content-inset) + var(--under-next)) 7px var(--folder-text-inset); }
 .drawer-interior .folder-title { font-size: clamp(11px, 1vw, 17px); }
 .drawer-interior .is-active .folder-title { font-size: clamp(19px, 1.7vw, 29px); line-height: 1.12; }
