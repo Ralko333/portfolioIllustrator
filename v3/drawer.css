@@ -385,3 +385,34 @@ body { background: var(--paper); color: var(--ink); }
 .pagination-title {
   font-weight: 600;
 }
+
+/* Publication evidence is secondary to the artworks: smaller, ratio-preserving thumbnails. */
+.case-gallery .case-figure.proof-figure {
+  width: min(100%, 460px);
+  justify-self: center;
+}
+.case-gallery .proof-figure .image-button.proof-image {
+  width: min(90%, var(--proof-width, 320px));
+  margin-inline: auto;
+  padding: 10px;
+  aspect-ratio: auto;
+}
+.case-gallery .proof-figure .image-button.proof-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+}
+.case-gallery .proof-figure figcaption {
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 4px 12px;
+}
+.case-gallery .proof-figure .release-link { flex-shrink: 1; }
+@media (max-width: 700px) {
+  .case-gallery .proof-figure .image-button.proof-image {
+    width: min(84%, var(--proof-width, 320px));
+  }
+}
