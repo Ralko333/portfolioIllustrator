@@ -455,3 +455,16 @@ body { background: var(--paper); color: var(--ink); }
   }
   .about.wrap > * { position: relative; z-index: 1; }
 }
+
+/* About typography only: uniform body size in every paragraph and screen width. */
+.about .about-copy,
+.about .about-copy p,
+.about .about-copy .about-lead {
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 400;
+}
+.about .about-copy p {
+  text-wrap: pretty;
+  hyphens: auto;
+}
