@@ -497,6 +497,14 @@ addEventListener('popstate', historyNavigation);
 addEventListener('hashchange', historyNavigation);
 
 await loadCopy();
+// Prevent one- and two-letter Russian function words from hanging at line ends
+// in the About paragraphs. Replace spaces only; retain every word and sentence.
+document.querySelectorAll('.about-copy p').forEach(paragraph => {
+  paragraph.textContent = paragraph.textContent.replace(
+    /(?<![\p{L}\p{N}])(в|во|к|ко|с|со|у|о|об|обо|а|и|но|на|по|за|из|от|до|не|ни|при|без|над|под) +(?=[\p{L}\p{N}])/giu,
+    '$1\u00a0'
+  );
+});
 renderHome();
 drawer = createDrawer({ verticalShelf, reduced });
 document.documentElement.classList.add('reveal-ready');
