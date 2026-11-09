@@ -439,7 +439,7 @@ body { background: var(--paper); color: var(--ink); }
   .about-contact-stage::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: 38px; /* Align with the About section’s top divider, after its margin. */
     bottom: 0;
     width: max(0px, calc((100% - 760px) / 2));
     background-repeat: no-repeat;
@@ -474,4 +474,25 @@ body:has(#home-view:not([hidden])) > .site-footer .footer-links > a[href="#"] { 
 .about .about-copy p {
   text-wrap: pretty;
   hyphens: auto;
+}
+
+/* Restore the original pre-drawer header and introduction background.
+   Full-viewport pseudo-panels avoid pale side gutters around the .wrap containers. */
+.site-header,
+#home-view > .exhibition-heading {
+  position: relative;
+  isolation: isolate;
+}
+.site-header { z-index: 2; }
+#home-view > .exhibition-heading { z-index: 1; }
+.site-header::before,
+#home-view > .exhibition-heading::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: #f9f4ec;
+  z-index: -1;
 }
