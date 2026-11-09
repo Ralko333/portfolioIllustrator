@@ -284,7 +284,7 @@ body { background: var(--paper); color: var(--ink); }
 }
 
 @media (min-width: 701px) {
-  .drawer-scene { background: #f3e2c8 url('assets/illustrated-floor.png') center / cover no-repeat; }
+  .drawer-scene { width: 100%; margin-left: 0; background: #f3e2c8 url('assets/illustrated-floor.png') center / cover no-repeat; }
   /* Desktop: put the project action on the title row, aligned to the caption's right edge. */
   .drawer-interior .folder.is-active .folder-meta {
     flex-direction: row;
@@ -427,34 +427,41 @@ body { background: var(--paper); color: var(--ink); }
   color: #1f1f1f;
 }
 
-/* Original approved flat artwork, cropped to the actual left and right illustrations.
-   High-density WebP assets preserve the original forms and detail at 4K.
-   Only the About area's sides are decorated; text and contacts are untouched. */
+/* Original approved side artwork: edge-to-edge and down to the footer rule.
+   Scale both images proportionally and preserve About/Contacts text and layout. */
+.about-contact-stage {
+  position: relative;
+  isolation: isolate;
+  display: flow-root;
+}
 @media (min-width: 1100px) {
-  .about.wrap { position: relative; isolation: isolate; }
-  .about.wrap::before,
-  .about.wrap::after {
+  .about-contact-stage::before,
+  .about-contact-stage::after {
     content: "";
     position: absolute;
-    inset-block: 0;
+    top: 0;
+    bottom: 0;
     width: max(0px, calc((100% - 760px) / 2));
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: auto 100%;
     pointer-events: none;
     z-index: 0;
   }
-  .about.wrap::before {
+  .about-contact-stage::before {
     left: 0;
-    background-position: right center;
+    background-position: left bottom;
     background-image: url('assets/about-original-left.webp');
   }
-  .about.wrap::after {
+  .about-contact-stage::after {
     right: 0;
-    background-position: left center;
+    background-position: right bottom;
     background-image: url('assets/about-original-right.webp');
   }
-  .about.wrap > * { position: relative; z-index: 1; }
+  .about-contact-stage > .about,
+  .about-contact-stage > .contacts { position: relative; z-index: 1; }
 }
+/* Hide 'Наверх' on the home page only, leaving project pages unchanged. */
+body:has(#home-view:not([hidden])) > .site-footer .footer-links > a[href="#"] { display: none; }
 
 /* About typography only: uniform body size in every paragraph and screen width. */
 .about .about-copy,
