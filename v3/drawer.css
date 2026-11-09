@@ -282,21 +282,30 @@ body { background: var(--paper); color: var(--ink); }
 
 @media (min-width: 701px) {
   .drawer-scene { background: #f3e2c8 url('assets/illustrated-floor.png') center / cover no-repeat; }
-  /* Desktop hint stays in the blue caption below the project title, never on the artwork. */
+  /* Desktop: put the project action on the title row, aligned to the caption's right edge. */
   .drawer-interior .folder.is-active .folder-meta {
-    justify-content: center;
-    gap: 3px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     padding-top: 3px;
     padding-bottom: 3px;
+  }
+  .drawer-interior .folder.is-active .folder-title {
+    min-width: 0;
+    font-size: clamp(14px, 1.25vw, 22px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .drawer-interior .folder.is-active .folder-hint {
     display: inline-flex;
     position: static;
-    align-self: flex-start;
+    align-self: center;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin: 0 0 0 auto;
     padding: 3px 8px;
     border: 1px solid #c9957d;
     border-radius: 4px;
