@@ -220,6 +220,8 @@ function figure(key, p, index, classes = '') {
   const button = element('button', 'image-button');
   button.type = 'button';
   button.dataset.media = index;
+  // Reuse the nine distinct homepage abstractions, staggering them per project.
+  button.dataset.backdrop = order[(order.indexOf(key) * 3 + index) % order.length];
   button.setAttribute('aria-label', `${copy.ui?.zoom || 'Увеличить'}: ${caption}`);
   if (bankAssets.has(asset)) button.classList.add('bank-image');
   if (published) button.classList.add('proof-image');
