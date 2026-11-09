@@ -216,10 +216,20 @@ function observeReveals(scope) {
 function figure(key, p, index, classes = '') {
   const [asset, caption, releaseIndex, published, wide] = p.media[index];
   const fig = element('figure', `case-figure ${classes}`.trim());
-  if (wide || (key === 'panel' && index === 0)) fig.classList.add('full');
+  if ((wide && !published) || (key === 'panel' && index === 0)) fig.classList.add('full');
+  if (published) fig.classList.add('proof-figure');
   const button = element('button', 'image-button');
   button.type = 'button';
   button.dataset.media = index;
+  if (published) {
+    // All publication thumbnails fit the same 400 x 300 px bounding box,
+    // keeping each screenshot's original portrait, square, or landscape ratio.
+    const [sourceWidth, sourceHeight] = dimensions[asset] || [];
+    if (sourceWidth > 0 && sourceHeight > 0) {
+      const scale = Math.min(400 / sourceWidth, 300 / sourceHeight);
+      button.style.setProperty('--proof-width', `${Math.round(sourceWidth * scale + 20)}px`);
+    }
+  }
   // Reuse the nine distinct homepage abstractions, staggering them per project.
   button.dataset.backdrop = order[(order.indexOf(key) * 3 + index) % order.length];
   button.setAttribute('aria-label', `${copy.ui?.zoom || 'Увеличить'}: ${caption}`);
