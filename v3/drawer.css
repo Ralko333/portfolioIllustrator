@@ -350,3 +350,21 @@ body { background: var(--paper); color: var(--ink); }
   .about h2, .contacts h2 { font-size: 32px; }
   .contact-links { align-items: center; }
 }
+
+/* Give each work thumbnail its own backdrop from the distinct homepage abstractions.
+   Only the inner project gallery is affected; the drawer and lightbox stay unchanged. */
+.case-gallery .image-button[data-backdrop] {
+  background-color: #f2eadf;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.case-gallery .image-button[data-backdrop="menus"] { background-image: url('assets/card-menus.svg'); }
+.case-gallery .image-button[data-backdrop="bank"] { background-image: url('assets/card-bank.svg'); }
+.case-gallery .image-button[data-backdrop="design"] { background-image: url('assets/card-design.svg'); }
+.case-gallery .image-button[data-backdrop="panel"] { background-image: url('assets/card-panel.svg'); }
+.case-gallery .image-button[data-backdrop="merch"] { background-image: url('assets/card-merch.svg'); }
+.case-gallery .image-button[data-backdrop="stickers"] { background-image: url('assets/card-stickers.svg'); }
+.case-gallery .image-button[data-backdrop="series"] { background-image: url('assets/card-series.svg'); }
+.case-gallery .image-button[data-backdrop="sailor"] { background-image: url('assets/card-sailor.svg'); }
+.case-gallery .image-button[data-backdrop="selected"] { background-image: url('assets/card-selected.svg'); }
