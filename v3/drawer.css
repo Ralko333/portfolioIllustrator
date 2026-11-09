@@ -420,10 +420,8 @@ body { background: var(--paper); color: var(--ink); }
   }
 }
 
-/* Project titles and About body copy use near-black; site section headings retain original blue. */
+/* Only collapsed drawer card titles and About body copy use near-black. */
 .drawer-interior .folder:not(.is-active) .folder-title,
-.case-head h1,
-.case-section h2,
 .about-copy,
 .about-copy .about-lead {
   color: #1f1f1f;
