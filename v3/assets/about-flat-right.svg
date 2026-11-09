@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 820" aria-hidden="true">
+<g>
+<!-- Flat stationery collage, right side of the approved About concept -->
+<path fill="#5d91b6" d="M359 0H265Q129 10 61 99Q12 159 0 251Q62 200 115 188Q255 152 359 194Z"/>
+<path fill="#2e6b95" d="M360 112Q275 88 168 155Q52 241 78 367Q132 315 200 319L360 346Z"/>
+<!-- Cat stamp -->
+<g transform="translate(79 133) rotate(9 128 123)">
+<path d="M10 0H262V233H10Z" fill="#fff1de" stroke="#fff1de" stroke-width="14" stroke-dasharray="13 9"/>
+<rect x="26" y="15" width="217" height="202" fill="#eb864f"/>
+<path d="M60 142L59 78L98 111L144 58L181 110L222 78L222 147Q212 191 157 196H123Q73 188 60 142Z" fill="#fff4dc"/>
+<path d="M60 78L104 109L94 85ZM181 109L222 79L206 91Z" fill="#f8cdb0"/>
+<path d="M88 133q15-13 30 3M160 137q15-14 31-3" stroke="#174b70" stroke-width="6" stroke-linecap="round" fill="none"/>
+<path d="M139 149l-8 6 8 6 8-6Z" fill="#d97b4b"/>
+<path d="M139 161q13 17 27-2M139 161q-9 13-20-1" stroke="#b96b49" stroke-width="4" stroke-linecap="round" fill="none"/>
+<path d="M82 153L41 142M81 165L38 170M191 152l37-14M195 164l37 4" stroke="#1f557c" stroke-width="4" stroke-linecap="round"/>
+</g>
+<!-- River blue swoosh behind pinned memo -->
+<path d="M360 328Q219 318 132 384Q-2 476 79 603Q184 620 360 532Z" fill="#6797b8"/>
+<path d="M360 470Q197 460 156 565Q130 647 204 689L360 637Z" fill="#ea8350"/>
+<g transform="translate(103 398) rotate(-12 111 91)">
+<rect width="222" height="185" rx="5" fill="#fff2df"/>
+<circle cx="110" cy="5" r="17" fill="#e97844"/>
+<path d="M80 127Q145 138 163 72" stroke="#2c688d" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M115 110q-39-43-25-63q30 2 25 63M134 104q6-48 39-43q-1 38-39 43M149 84q17-37 52-32q-16 34-52 32" fill="#5a8caf"/>
+<path d="M54 88l-16-21M76 71L67 45" stroke="#e97843" stroke-width="6" stroke-linecap="round"/>
+</g>
+<!-- Sketch notebook with clouds -->
+<g transform="translate(116 620) rotate(8 130 110)">
+<rect width="257" height="235" rx="10" fill="#fff2dd"/>
+<rect x="18" y="28" width="223" height="190" fill="#72a1c0"/>
+<path d="M18 175Q54 134 89 154Q105 107 147 135Q177 110 199 143Q224 135 241 156V218H18Z" fill="#f8ecdb"/>
+<path d="M18 208Q73 168 108 193Q165 153 241 191V218H18Z" fill="#fff9ee"/>
+<path d="M42 0V38M79 0V38M116 0V38M153 0V38M190 0V38" stroke="#1b5477" stroke-width="10" stroke-linecap="round"/>
+<g fill="none" stroke="#123d62" stroke-width="5"><circle cx="42" cy="33" r="12"/><circle cx="79" cy="33" r="12"/><circle cx="116" cy="33" r="12"/><circle cx="153" cy="33" r="12"/><circle cx="190" cy="33" r="12"/></g>
+</g>
+<!-- Pen angled along notebook -->
+<g transform="translate(120 662) rotate(24 12 75)">
+<rect x="4" y="0" width="24" height="140" rx="5" fill="#255e84"/>
+<path d="M4 0H28V29H4Z" fill="#f6e3c7"/>
+<path d="M8 141L16 181L25 141Z" fill="#f6e3c7"/>
+<path d="M13 165l3 16 4-16Z" fill="#17425f"/>
+<rect x="11" y="24" width="6" height="82" fill="#e97843"/>
+</g>
+<path d="M360 796Q284 773 186 820H360Z" fill="#e77e4b"/>
+</g></svg>
