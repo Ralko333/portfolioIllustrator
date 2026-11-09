@@ -400,7 +400,6 @@ window.PORTFOLIO_DATA = {
           "merchProof",
           "Мерч Ханами с готовыми принтами",
           0,
-          true,
           true
         ]
       ],
