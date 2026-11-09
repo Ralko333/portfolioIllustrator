@@ -322,3 +322,31 @@ body { background: var(--paper); color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   .drawer-scene, .drawer-tray { transition: none !important; }
 }
+
+/* About and contacts: stacked, centered sections beneath the portfolio drawer. */
+.about.wrap {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: 24px;
+  text-align: center;
+}
+.about h2 { margin-top: 0; text-align: center; }
+.about-copy {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+.contacts.wrap { text-align: center; }
+.contacts h2 {
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 500;
+  letter-spacing: -.04em;
+  margin-bottom: 24px;
+}
+.contact-links { justify-content: center; align-items: center; }
+@media (max-width: 700px) {
+  .about.wrap { gap: 20px; }
+  .about h2, .contacts h2 { font-size: 32px; }
+  .contact-links { align-items: center; }
+}
