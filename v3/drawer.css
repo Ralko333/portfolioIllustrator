@@ -152,6 +152,9 @@ body { background: var(--paper); color: var(--ink); }
 }
 
 .drawer-interior .is-active .folder-number { background: var(--folder-band); }
+/* Active folder number and section title only; preserve all other text colors. */
+.drawer-interior .folder.is-active .folder-number,
+.drawer-interior .folder.is-active .folder-title { color: #faf7ed; }
 .drawer-interior .folder .project-art { inset: var(--folder-tab) 0 var(--folder-caption); width: auto; z-index: 0; }
 
 /* Nine individual illustrated compositions, not a tinted / shifted copy of one image. */
