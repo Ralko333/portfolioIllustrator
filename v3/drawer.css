@@ -335,7 +335,7 @@ body { background: var(--paper); color: var(--ink); }
   width: 100%;
   max-width: 760px;
   margin-inline: auto;
-  text-align: center;
+  text-align: justify;
 }
 .contacts.wrap { text-align: center; }
 .contacts h2 {
