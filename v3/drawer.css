@@ -282,6 +282,27 @@ body { background: var(--paper); color: var(--ink); }
 
 @media (min-width: 701px) {
   .drawer-scene { background: #f3e2c8 url('assets/illustrated-floor.png') center / cover no-repeat; }
+  /* Desktop-only open-project hint; no change to card dimensions or mobile layout. */
+  .drawer-interior .folder.is-active .folder-hint {
+    display: inline-flex;
+    position: absolute;
+    left: var(--folder-text-inset);
+    bottom: calc(100% + 9px);
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid #c9957d;
+    border-radius: 4px;
+    background: #6082a8;
+    color: #fff7ec;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.15;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 5;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
