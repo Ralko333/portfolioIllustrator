@@ -1,6 +1,6 @@
 :root {
   --paper: #f9f4ec;
-  --ink: #294b6b;
+  --ink: #1f1f1f;
   --muted: #687d90;
   --rule: #bac9d3;
   --blue: #6082a8;
@@ -142,7 +142,7 @@ body { background: var(--paper); color: var(--ink); }
   height: var(--folder-tab);
   padding: 0 var(--folder-text-inset);
   background: var(--folder-band);
-  color: #172d40;
+  color: #1f1f1f;
   border: 0;
   border-bottom: 1px solid #a57566;
   font-size: var(--folder-number-size);
@@ -152,6 +152,9 @@ body { background: var(--paper); color: var(--ink); }
 }
 
 .drawer-interior .is-active .folder-number { background: var(--folder-band); }
+/* The expanded folder's number and title switch to warm white. */
+.drawer-interior .folder.is-active .folder-number,
+.drawer-interior .folder.is-active .folder-title { color: #faf7ed; }
 .drawer-interior .folder .project-art { inset: var(--folder-tab) 0 var(--folder-caption); width: auto; z-index: 0; }
 
 /* Nine individual illustrated compositions, not a tinted / shifted copy of one image. */
@@ -171,7 +174,7 @@ body { background: var(--paper); color: var(--ink); }
 .drawer-interior .folder[data-project="sailor"] .project-art { background-image: url('assets/card-sailor.svg'); }
 .drawer-interior .folder[data-project="selected"] .project-art { background-image: url('assets/card-selected.svg'); }
 
-.drawer-interior .folder-meta { left: 0; padding: 7px calc(var(--folder-content-inset) + var(--under-next)) 6px var(--folder-text-inset); background: var(--folder-caption-band); border: 0; border-top: 1px solid #7292aa; color: #172d40; z-index: 4; }
+.drawer-interior .folder-meta { left: 0; padding: 7px calc(var(--folder-content-inset) + var(--under-next)) 6px var(--folder-text-inset); background: var(--folder-caption-band); border: 0; border-top: 1px solid #7292aa; color: #1f1f1f; z-index: 4; }
 .drawer-interior .is-active .folder-meta { padding: 8px calc(var(--folder-content-inset) + var(--under-next)) 7px var(--folder-text-inset); }
 .drawer-interior .folder-title { font-size: clamp(11px, 1vw, 17px); }
 .drawer-interior .is-active .folder-title { font-size: clamp(19px, 1.7vw, 29px); line-height: 1.12; }
