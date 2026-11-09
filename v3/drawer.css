@@ -427,16 +427,17 @@ body { background: var(--paper); color: var(--ink); }
   color: #1f1f1f;
 }
 
-/* Flat illustrative side panels for About only. No changes to copy or contacts. */
+/* Original approved flat artwork, cropped to the actual left and right illustrations.
+   High-density WebP assets preserve the original forms and detail at 4K.
+   Only the About area's sides are decorated; text and contacts are untouched. */
 @media (min-width: 1100px) {
   .about.wrap { position: relative; isolation: isolate; }
   .about.wrap::before,
   .about.wrap::after {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: min(22vw, calc((100% - 790px) / 2));
+    inset-block: 0;
+    width: max(0px, calc((100% - 760px) / 2));
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
@@ -444,13 +445,13 @@ body { background: var(--paper); color: var(--ink); }
   }
   .about.wrap::before {
     left: 0;
-    background-position: left center;
-    background-image: url('assets/about-flat-left.svg');
+    background-position: right center;
+    background-image: url('assets/about-original-left.webp');
   }
   .about.wrap::after {
     right: 0;
-    background-position: right center;
-    background-image: url('assets/about-flat-right.svg');
+    background-position: left center;
+    background-image: url('assets/about-original-right.webp');
   }
   .about.wrap > * { position: relative; z-index: 1; }
 }
