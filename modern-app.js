@@ -341,18 +341,22 @@ function readRoute(hash) {
   return { key: projects[key] ? key : null, anchor };
 }
 function scrollInstant(top) { window.scrollTo({ top, left: 0, behavior: 'instant' }); }
-function scrollToAnchor(route) {
+function scrollToAnchor(route, smooth = false) {
   const target = route.key
     ? [...detail.querySelectorAll('[data-anchor]')].find(n => n.dataset.anchor === route.anchor)
     : document.getElementById(route.anchor);
-  if (target) scrollInstant(target.getBoundingClientRect().top + scrollY - 26);
+  if (target) window.scrollTo({
+    top: target.getBoundingClientRect().top + scrollY - 26,
+    left: 0,
+    behavior: smooth && !reduced.matches ? 'smooth' : 'instant'
+  });
 }
 function clearTransitionNames() {
   document.querySelectorAll('[style*="view-transition-name"]').forEach(n => n.style.removeProperty('view-transition-name'));
 }
-async function navigate(hash, { initial = false, restoreHome = false } = {}) {
+async function navigate(hash, { initial = false, restoreHome = false, smoothAnchor = false } = {}) {
   if (hash === currentHash && !initial) {
-    if (!current.key) scrollToAnchor(current);
+    if (!current.key) scrollToAnchor(current, smoothAnchor);
     return;
   }
   currentHash = hash;
@@ -366,7 +370,7 @@ async function navigate(hash, { initial = false, restoreHome = false } = {}) {
   if (token !== routeToken) return;
   if (destination.key === current.key) {
     current = destination;
-    if (destination.anchor) scrollToAnchor(destination);
+    if (destination.anchor) scrollToAnchor(destination, smoothAnchor);
     else if (!destination.key) scrollInstant(0);
     return;
   }
@@ -396,7 +400,7 @@ async function navigate(hash, { initial = false, restoreHome = false } = {}) {
     } else {
       if (previous.key) drawer?.open(true);
       scrollInstant(restoreHome ? homeScroll : 0);
-      if (!restoreHome && destination.anchor) scrollToAnchor(destination);
+      if (!restoreHome && destination.anchor && !smoothAnchor) scrollToAnchor(destination);
       observeReveals(home);
     }
     const target = destination.key ? detail.querySelector('.case-lead') : card?.querySelector('.project-art');
@@ -420,6 +424,8 @@ async function navigate(hash, { initial = false, restoreHome = false } = {}) {
   }
   if (token !== routeToken) return;
   clearTransitionNames();
+  // For a return from a project, scroll after the view transition has finished.
+  if (!destination.key && previous.key && !restoreHome && destination.anchor && smoothAnchor) scrollToAnchor(destination, true);
   if (!initial && destination.key) detail.focus({ preventScroll: true });
   else if (!initial && restoreHome) card?.querySelector('.folder-trigger')?.focus({ preventScroll: true });
 }
@@ -488,7 +494,7 @@ document.addEventListener('click', event => {
   document.querySelector('.mobile-nav').open = false;
   const hash = url.hash;
   if (hash !== location.hash) history.pushState(null, '', hash || `${location.pathname}${location.search}`);
-  navigate(hash, { restoreHome: a.hasAttribute('data-return') });
+  navigate(hash, { restoreHome: a.hasAttribute('data-return'), smoothAnchor: hash === '#about' || hash === '#work' });
 });
 function historyNavigation() {
   navigate(location.hash, { restoreHome: !!current.key && !readRoute(location.hash).key });
