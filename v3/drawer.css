@@ -419,3 +419,14 @@ body { background: var(--paper); color: var(--ink); }
     width: min(84%, var(--proof-width, 320px));
   }
 }
+
+/* Specific section titles and About body only; the "Обо мне" heading and active folder labels retain their colors. */
+.exhibition-heading #work-title,
+.drawer-interior .folder:not(.is-active) .folder-title,
+.case-head h1,
+.case-section h2,
+.contacts h2,
+.about-copy,
+.about-copy .about-lead {
+  color: #1f1f1f;
+}
