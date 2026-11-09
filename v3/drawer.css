@@ -368,3 +368,20 @@ body { background: var(--paper); color: var(--ink); }
 .case-gallery .image-button[data-backdrop="series"] { background-image: url('assets/card-series.svg'); }
 .case-gallery .image-button[data-backdrop="sailor"] { background-image: url('assets/card-sailor.svg'); }
 .case-gallery .image-button[data-backdrop="selected"] { background-image: url('assets/card-selected.svg'); }
+
+/* Onest typography: semibold headings, regular body copy. */
+.brand,
+.exhibition-heading.hero h1,
+.exhibition-heading h2,
+.section-heading h2,
+.drawer-interior .folder-title,
+.drawer-interior .folder.is-active .folder-title,
+.about h2,
+.contacts h2,
+.case-head h1,
+.case-section h2,
+.publications h2,
+.subheading,
+.pagination-title {
+  font-weight: 600;
+}
