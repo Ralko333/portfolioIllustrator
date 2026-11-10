@@ -452,7 +452,7 @@ body { background: var(--paper); color: var(--ink); }
   .about-contact-stage::before {
     left: 0;
     background-position: left bottom;
-    background-image: url('assets/about-approved-final-left.webp');
+    background-image: url('assets/about-approved-final-left-corrected-bg.webp');
   }
   .about-contact-stage::after {
     right: 0;
