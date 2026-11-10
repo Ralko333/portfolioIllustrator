@@ -454,7 +454,7 @@ body { background: var(--paper); color: var(--ink); }
   }
   .about-contact-stage::after {
     right: 0;
-    background-position: right bottom;
+    background-position: calc(100% + 36px) bottom;
     background-image: url('assets/about-approved-final-right.webp');
   }
   .about-contact-stage > .about,
