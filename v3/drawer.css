@@ -451,8 +451,8 @@ body { background: var(--paper); color: var(--ink); }
   }
   .about-contact-stage::before {
     left: 0;
-    background-position: left -28px bottom;
-    background-image: url('assets/about-left-clean-position.webp');
+    background-position: left bottom;
+    background-image: url('assets/about-approved-final-left.webp');
   }
   .about-contact-stage::after {
     right: 0;
