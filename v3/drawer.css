@@ -451,7 +451,7 @@ body { background: var(--paper); color: var(--ink); }
   .about-contact-stage::before {
     left: 0;
     background-position: left bottom;
-    background-image: url('assets/about-bg-matched-left.webp');
+    background-image: url('assets/about-shifted-objects-left.webp');
   }
   /* At narrower desktop widths, keep the image's right edge visible instead of
      cropping it at the inner boundary of its side panel. */
@@ -460,8 +460,10 @@ body { background: var(--paper); color: var(--ink); }
   }
   .about-contact-stage::after {
     right: 0;
+    /* Reveal more of the artwork's lower-left blue shape, keeping its outer
+       right edge flush with the screen (no translateX or right-side gap). */
+    width: max(0px, calc((100% - 760px) / 2 + 64px));
     background-position: right bottom;
-    transform: translateX(clamp(64px, 4.5vw, 120px));
     background-image: url('assets/about-bg-matched-right.webp');
   }
   .about-contact-stage > .about,
