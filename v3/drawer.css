@@ -433,6 +433,7 @@ body { background: var(--paper); color: var(--ink); }
   position: relative;
   isolation: isolate;
   display: flow-root;
+  overflow: clip;
 }
 @media (min-width: 1100px) {
   .about-contact-stage::before,
@@ -454,7 +455,8 @@ body { background: var(--paper); color: var(--ink); }
   }
   .about-contact-stage::after {
     right: 0;
-    background-position: calc(100% + 36px) bottom;
+    background-position: right bottom;
+    transform: translateX(clamp(64px, 4.5vw, 120px));
     background-image: url('assets/about-approved-final-right.webp');
   }
   .about-contact-stage > .about,
