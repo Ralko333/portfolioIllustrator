@@ -460,10 +460,10 @@ body { background: var(--paper); color: var(--ink); }
   }
   .about-contact-stage::after {
     right: 0;
-    /* Reveal more of the artwork's lower-left blue shape, keeping its outer
-       right edge flush with the screen (no translateX or right-side gap). */
-    width: max(0px, calc((100% - 760px) / 2 + 64px));
-    background-position: right bottom;
+    /* Shift the artwork itself left, instead of widening a right-aligned box.
+       Its untouched cream backdrop matches the page background. */
+    width: max(0px, calc((100% - 760px) / 2 + 112px));
+    background-position: right 72px bottom;
     background-image: url('assets/about-bg-matched-right.webp');
   }
   .about-contact-stage > .about,
