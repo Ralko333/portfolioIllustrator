@@ -451,7 +451,7 @@ body { background: var(--paper); color: var(--ink); }
   .about-contact-stage::before {
     left: 0;
     background-position: left bottom;
-    background-image: url('assets/about-approved-final-left.webp');
+    background-image: url('assets/about-approved-shifted-upper-left.webp');
   }
   /* At narrower desktop widths, keep the image's right edge visible instead of
      cropping it at the inner boundary of its side panel. */
