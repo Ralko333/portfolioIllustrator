@@ -427,8 +427,9 @@ body { background: var(--paper); color: var(--ink); }
   color: #1f1f1f;
 }
 
-/* Original approved side artwork: edge-to-edge and down to the footer rule.
-   Scale both images proportionally and preserve About/Contacts text and layout. */
+/* About side illustrations: retain the approved artwork, no hard container cuts.
+   Each image fits entirely into its own side of the page, and the center
+   text/contacts remain unobstructed. Keep the page's cream backdrop visible. */
 .about-contact-stage {
   position: relative;
   isolation: isolate;
@@ -440,30 +441,22 @@ body { background: var(--paper); color: var(--ink); }
   .about-contact-stage::after {
     content: "";
     position: absolute;
-    top: 38px; /* Align with the About section’s top divider, after its margin. */
+    top: 38px; /* The top divider of About is 38px below the stage top. */
     bottom: 0;
-    width: max(0px, calc((100% - 760px) / 2));
+    width: max(0px, calc((100% - 760px) / 2 - 16px));
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: contain;
     pointer-events: none;
     z-index: 0;
   }
   .about-contact-stage::before {
     left: 0;
     background-position: left bottom;
-    background-image: url('assets/about-shifted-objects-left.webp');
-  }
-  /* At narrower desktop widths, keep the image's right edge visible instead of
-     cropping it at the inner boundary of its side panel. */
-  @media (max-width: 1680px) {
-    .about-contact-stage::before { background-position: right bottom; }
+    background-image: url('assets/about-left-clean-position.webp');
   }
   .about-contact-stage::after {
     right: 0;
-    /* Shift the artwork itself left, instead of widening a right-aligned box.
-       Its untouched cream backdrop matches the page background. */
-    width: max(0px, calc((100% - 760px) / 2 + 112px));
-    background-position: right 72px bottom;
+    background-position: right bottom;
     background-image: url('assets/about-bg-matched-right.webp');
   }
   .about-contact-stage > .about,
