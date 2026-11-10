@@ -443,7 +443,7 @@ body { background: var(--paper); color: var(--ink); }
     position: absolute;
     top: 38px; /* The top divider of About is 38px below the stage top. */
     bottom: 0;
-    width: max(0px, calc((100% - 760px) / 2 - 16px));
+    width: 100%;
     background-repeat: no-repeat;
     background-size: auto 100%;
     pointer-events: none;
@@ -451,12 +451,12 @@ body { background: var(--paper); color: var(--ink); }
   }
   .about-contact-stage::before {
     left: 0;
-    background-position: left bottom;
+    background-position: left -28px bottom;
     background-image: url('assets/about-left-clean-position.webp');
   }
   .about-contact-stage::after {
     right: 0;
-    background-position: right bottom;
+    background-position: right -28px bottom;
     background-image: url('assets/about-bg-matched-right.webp');
   }
   .about-contact-stage > .about,
