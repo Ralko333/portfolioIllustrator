@@ -451,7 +451,7 @@ body { background: var(--paper); color: var(--ink); }
   .about-contact-stage::before {
     left: 0;
     background-position: left bottom;
-    background-image: url('assets/about-approved-shifted-upper-left.webp');
+    background-image: url('assets/about-bg-matched-left.webp');
   }
   /* At narrower desktop widths, keep the image's right edge visible instead of
      cropping it at the inner boundary of its side panel. */
@@ -462,7 +462,7 @@ body { background: var(--paper); color: var(--ink); }
     right: 0;
     background-position: right bottom;
     transform: translateX(clamp(64px, 4.5vw, 120px));
-    background-image: url('assets/about-approved-final-right.webp');
+    background-image: url('assets/about-bg-matched-right.webp');
   }
   .about-contact-stage > .about,
   .about-contact-stage > .contacts { position: relative; z-index: 1; }
