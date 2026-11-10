@@ -453,6 +453,11 @@ body { background: var(--paper); color: var(--ink); }
     background-position: left bottom;
     background-image: url('assets/about-approved-final-left.webp');
   }
+  /* At narrower desktop widths, keep the image's right edge visible instead of
+     cropping it at the inner boundary of its side panel. */
+  @media (max-width: 1680px) {
+    .about-contact-stage::before { background-position: right bottom; }
+  }
   .about-contact-stage::after {
     right: 0;
     background-position: right bottom;
