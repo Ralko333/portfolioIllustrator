@@ -758,7 +758,7 @@ window.PORTFOLIO_DATA = {
         "0": "J’PAN",
         "2": "Влаваше",
         "4": "Spaffy",
-        "5": "Карточка товара PS 5 Dualsense"
+        "5": "PS 5 Dualsense"
       },
       "groupAnchors": {
         "0": "menu-layout",
