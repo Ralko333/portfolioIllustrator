@@ -74,7 +74,8 @@ window.PORTFOLIO_DATA = {
     "restored70": "assets/proofs/sailor-live-4.svg",
     "vlavasheFront": "assets/vlavashe-a6-front.webp",
     "vlavasheBack": "assets/vlavashe-a6-back.webp",
-    "spaffyPost": "assets/spaffy-instagram.webp"
+    "spaffyPost": "assets/spaffy-instagram.webp",
+    "ozonDualSense": "assets/ozon-dualsense.jpg"
   },
   "projects": {
     "menus": {
@@ -702,8 +703,8 @@ window.PORTFOLIO_DATA = {
     "design": {
       "title": "Графический дизайн",
       "label": "Вёрстка и типографика",
-      "description": "Вёрстка зимнего меню J’PAN, буклет А6 для промоутеров «Влаваше» и макет для карусели Instagram Spaffy.",
-      "client": "J’PAN, Влаваше, Spaffy",
+      "description": "Вёрстка зимнего меню J’PAN, буклет для «Влаваше», макет для Instagram Spaffy и карточка товара для Ozon.",
+      "client": "J’PAN, Влаваше, Spaffy, личный проект",
       "role": "Вёрстка и типографика",
       "format": "Печатные и цифровые макеты",
       "mixed": true,
@@ -745,22 +746,31 @@ window.PORTFOLIO_DATA = {
           "Слайд для карусели · 1080 × 1350 px",
           null,
           false
+        ],
+        [
+          "ozonDualSense",
+          "Карточка товара для Ozon · DualSense",
+          null,
+          false
         ]
       ],
       "groups": {
-        "0": "Зимнее меню J’PAN",
+        "0": "J’PAN",
         "2": "Влаваше",
-        "4": "Spaffy"
+        "4": "Spaffy",
+        "5": "Личный проект"
       },
       "groupAnchors": {
         "0": "menu-layout",
         "2": "vlavashe",
-        "4": "spaffy"
+        "4": "spaffy",
+        "5": "ozon"
       },
       "groupDescriptions": {
         "0": "Вёрстка внутренних страниц зимнего меню J’PAN 2025 года: разделы с блюдами и напитками.",
         "2": "Двусторонний буклет А6 для промоутеров «Влаваше». На лицевой стороне — предложение комбо, на обороте — акция с пятой шавермой в подарок.",
-        "4": "Макет для карусели Instagram о завершении темы «Проценты». Формат — 1080 × 1350 px."
+        "4": "Макет для карусели Instagram о завершении темы «Проценты». Формат — 1080 × 1350 px.",
+        "5": "Карточка товара для Ozon с инфографикой о геймпаде DualSense. Личный проект."
       },
       "subheadings": {},
       "related": [
@@ -1148,6 +1158,10 @@ window.PORTFOLIO_DATA = {
     "spaffyPost": [
       1080,
       1350
+    ],
+    "ozonDualSense": [
+      1536,
+      1536
     ]
   }
 };
