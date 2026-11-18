@@ -1,6 +1,6 @@
 import { createDrawer } from './v3/drawer.js?v=20261108-drawer-4';
 
-const rootURL = new URL('./', document.baseURI);
+const rootURL = new URL('./', import.meta.url);
 const { assets, previews, dimensions, projects } = window.PORTFOLIO_DATA;
 const order = ['menus', 'bank', 'design', 'panel', 'merch', 'stickers', 'series', 'sailor', 'selected'];
 const compositions = {
