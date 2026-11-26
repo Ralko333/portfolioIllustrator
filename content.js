@@ -74,7 +74,7 @@ window.PORTFOLIO_DATA = {
     "restored70": "assets/proofs/sailor-live-4.svg",
     "vlavasheFront": "assets/vlavashe-a6-front.webp",
     "vlavasheBack": "assets/vlavashe-a6-back.webp",
-    "spaffyPost": "assets/spaffy-instagram.webp",
+    "spaffyPost": "assets/spaffy-instagram.webp?v=20261126-pdf",
     "ozonDualSense": "assets/ozon-dualsense.jpg"
   },
   "projects": {
@@ -856,7 +856,7 @@ window.PORTFOLIO_DATA = {
     "worldFour": "assets/previews/world-cuisines-4.webp",
     "vlavasheFront": "assets/previews/vlavashe-a6-front.webp",
     "vlavasheBack": "assets/previews/vlavashe-a6-back.webp",
-    "spaffyPost": "assets/spaffy-instagram.webp"
+    "spaffyPost": "assets/spaffy-instagram.webp?v=20261126-pdf"
   },
   "dimensions": {
     "imaginationFlood": [
@@ -1165,3 +1165,4 @@ window.PORTFOLIO_DATA = {
     ]
   }
 };
+
