@@ -1064,6 +1064,35 @@ html:has(.viewer[open]) { overflow: hidden; }
 [data-theme="showcase"] .profile {
   background: linear-gradient(180deg, var(--paper) 0, var(--wash-mid) 110px, var(--wash-end) 100%);
 }
+/* Keep the section heading above the introduction, then read down each column. */
+[data-theme="showcase"] .profile-grid {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(20px, 2.2vw, 32px);
+}
+[data-theme="showcase"] .profile-copy {
+  max-width: none;
+  column-count: 2;
+  column-gap: clamp(32px, 5vw, 72px);
+}
+[data-theme="showcase"] .profile-copy > p {
+  break-inside: avoid-column;
+  orphans: 3;
+  widows: 3;
+}
+[data-theme="showcase"] .profile-copy .about-lead {
+  column-span: all;
+  max-width: 42ch;
+  margin-bottom: 24px;
+}
+[data-theme="showcase"] .profile-copy .about-lead + p { margin-top: 0; }
+@media (max-width: 860px) {
+  [data-theme="showcase"] .profile-copy {
+    max-width: 66ch;
+    column-count: 1;
+  }
+  [data-theme="showcase"] .profile-copy .about-lead { margin-bottom: 18px; }
+}
 [data-theme="showcase"] body:has(#home) .site-footer {
   width: 100%;
   max-width: none;
