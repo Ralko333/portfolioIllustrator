@@ -318,6 +318,7 @@ html:has(.viewer[open]) { overflow: hidden; }
 }
 .identity { display: inline-flex; gap: 11px; align-items: center; text-decoration: none; }
 .brand-mark { width: 25px; height: 36px; flex: none; }
+.brand-wordmark { width: auto; height: 64px; flex: none; object-fit: contain; }
 .identity-copy { display: grid; gap: 2px; line-height: 1.25; }
 .identity-name { font-weight: 550; font-size: 15px; }
 .identity-role { color: var(--muted); font-size: 12px; }
@@ -745,6 +746,7 @@ html:has(.viewer[open]) { overflow: hidden; }
   .header-inner { min-height: 61px; gap: 7px; }
   .identity { gap: 6px; }
   .brand-mark { width: 21px; height: 30px; }
+  .brand-wordmark { height: 52px; }
   .identity-name { font-size: 13px; }
   .identity-role { font-size: 11px; }
   .site-nav { gap: clamp(8px, 2.6vw, 18px); }
@@ -1725,11 +1727,7 @@ html:has(.viewer[open]) { overflow: hidden; }
 <header class="shell" id="top">
   <div class="header-inner">
     <a class="identity" href="#top" aria-label="Сергей Белик, начало портфолио">
-      <svg class="brand-mark" viewbox="392 284 468 674" aria-hidden="true">
-        <path d="M647 484 C680 466 721 442 720 403 C722 365 698 332 650 330 L598 330 C537 330 492 367 493 425 C494 473 532 502 598 531 C705 576 804 629 804 725 C804 809 730 867 645 867 C555 867 509 805 509 737 L509 601" fill="none" stroke="#6082A8" stroke-width="41" stroke-linecap="round" stroke-linejoin="round"></path>
-        <path class="brand-corner" pathlength="1" d="M443 838 L443 874 C443 895 457 909 479 909 L511 909" fill="none" stroke="#D7755A" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
-      <span class="identity-copy"><span class="identity-name">Сергей Белик</span><span class="identity-role">Векторный иллюстратор</span></span>
+      <img class="brand-wordmark" src="media/sergey-belik-wordmark-104728c26a27.webp" width="512" height="341" alt="Sergey Belik" decoding="async" fetchpriority="high">
     </a>
     <nav class="site-nav" aria-label="Навигация">
       <a href="#work">Работы</a><a href="#about">Обо мне</a><a href="#contact">Контакты</a>
